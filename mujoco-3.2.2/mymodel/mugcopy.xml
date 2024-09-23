@@ -1,0 +1,30 @@
+<mujoco model="stairs">
+  <visual>
+    <headlight ambient="0 0 0" diffuse="0 0 0" specular="1 1 1"/>
+    <quality shadowsize="8192"/>
+  </visual>
+
+  <asset>
+    <material name="floor" reflectance=".1"/>
+  </asset>
+
+  <default>
+
+  </default>
+
+  <worldbody>
+    <light pos="4 -4 3" dir="-2 2 -1.5" diffuse=".6 .6 .6"/>
+    <light pos="-2 -4 3" dir="1 2 -1.5" diffuse=".6 .6 .6"/>
+    <geom type="plane" size="5 5 .01" rgba="1 1 1 1" material="floor"/>
+
+    <body name="stairs" pos="0 0 0">
+    <geom type="box" size="0.5 2 0.1" pos="0 0 0.1" />
+    <geom type="box" size="0.5 2 0.1" pos="0.5 0 0.3" />
+    <geom type="box" size="0.5 2 0.1" pos="1 0 0.5" />
+    <geom type="box" size="0.5 2 0.1" pos="1.5 0 0.7" />
+    <geom type="box" size="0.5 2 0.1" pos="2 0 0.9" />
+    <geom type="box" size="0.5 2 0.1" pos="2.5 0 1.1" />
+    </body>
+
+  </worldbody>
+</mujoco>
