@@ -18,7 +18,7 @@
     <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
 
     <body name="grass_path" pos="0 0 -0.01">
-        <geom type="box" size="2.5 0.55 0.01" pos="2.5 0 0" material="mat_grass" />
+        <geom type="plane" size="2.5 0.55 0.01" pos="2.5 0 0" material="mat_grass" />
     </body>
 
     <include file="./component/pebble.xml"/>

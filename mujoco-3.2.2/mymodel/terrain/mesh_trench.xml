@@ -1,0 +1,12 @@
+<mujoco>
+    <asset>
+        <mesh file="mesh/Trench_90_Deg._Turn_V1.stl" name="trench_mesh"/>
+        <material name="mat_trench" rgba="0.8 0.8 0.8 1"/>
+    </asset>
+    <worldbody>
+        <body name="mesh_trench" pos="0 0 0">
+            <geom type="mesh" mesh="trench_mesh" material="mat_trench"/>
+        </body>
+    </worldbody>
+</mujoco>
+ 
