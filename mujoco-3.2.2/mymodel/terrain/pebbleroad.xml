@@ -1,6 +1,9 @@
 <mujoco>
   <custom>
   </custom>
+  <extension>
+    <plugin plugin="mujoco.elasticity.shell"/>
+  </extension>
   <default>
   </default>
   <asset>
@@ -18,7 +21,24 @@
         <geom type="box" size="2.5 0.55 0.01" pos="2.5 0 0" material="mat_grass" />
     </body>
 
-    <body name="pebbles" pos="0 0 0">
+    <include file="./component/pebble.xml"/>
+
+    <!-- <geom name="floor" type="plane" size="0 0 .1"/> -->
+
+    <body pos="1.5 0.0 0.05" euler="0 0 45">
+      <composite type="particle" count="9 19 1" spacing="0.05" flatinertia="0.01">
+        <skin texcoord="true" inflate="0.005" subgrid="4"/>
+        <geom type="ellipsoid" size="0.025 0.01 0.025" rgba=".8 .2 .1 1" group="4"/>
+        <plugin plugin="mujoco.elasticity.shell">
+          <config key="poisson" value="0"/>
+          <config key="thickness" value="1e-2"/>
+          <!--Units are in Pa (SI)-->
+          <config key="young" value="3e6"/>
+        </plugin>
+      </composite>
+    </body>
+
+    <!-- <body name="pebbles" pos="0 0 0">
         <geom type="ellipsoid" size="0.06881853450313591 0.06940428036816945 0.059032726740547936" pos="0.5381922847961301 -0.05450587654969419 0" euler="0 0 15.999001535950065" material="mat_pebble"/>
         <geom type="ellipsoid" size="0.06866413771016623 0.04764460934006337 0.05233158665584792" pos="1.8737720965431675 -0.4849640775520031 0" euler="0 0 240.04325330676727" material="mat_pebble"/>
         <geom type="ellipsoid" size="0.08931354112991505 0.06054971954383577 0.04638335297025828" pos="2.6615464429596307 -0.23432451767320606 0" euler="0 0 319.939392531904" material="mat_pebble"/>
@@ -69,7 +89,7 @@
         <geom type="ellipsoid" size="0.09326963542448165 0.04915255867069818 0.06107992877315278" pos="4.886715607040007 -0.10506460672165985 0" euler="0 0 75.421931122004" material="mat_pebble"/>
         <geom type="ellipsoid" size="0.07893655257395463 0.05855653441038157 0.040299467114291" pos="2.9768491015161502 -0.4522424619991522 0" euler="0 0 148.37085374875352" material="mat_pebble"/>
         <geom type="ellipsoid" size="0.09957231467935412 0.07964433111123467 0.035189484499478396" pos="1.1656639631313248 0.022829828569844612 0" euler="0 0 147.78567781090328" material="mat_pebble"/>
-    </body>
+    </body> -->
   </worldbody>
 
 </mujoco>
