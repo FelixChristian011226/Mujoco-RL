@@ -1,6 +1,6 @@
 import random
 
-def generate_pebble_path_xml(num_stones=50, path_length=5, path_width=1):
+def generate_pebble_path_xml(num_stones=100, path_length=5, path_width=1):
     xml_content = "<worldbody>\n"
     xml_content += '    <body name="pebble_path" pos="0 0 0">\n'
     
