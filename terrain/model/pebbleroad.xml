@@ -1,0 +1,95 @@
+<mujoco>
+  <custom>
+  </custom>
+  <extension>
+    <plugin plugin="mujoco.elasticity.shell"/>
+  </extension>
+  <default>
+  </default>
+  <asset>
+      <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+      <texture name="tex_pebble" type="2d" file="../texture/pebble.png" />
+      <texture name="grass" type="2d" file="../texture/grass_1250_275.png" />
+      <material name="mat_pebble" texture="tex_pebble" specular="0.3" shininess="0.1"/>
+      <material name="mat_grass" texture="grass" />
+  </asset>
+  <worldbody>
+
+    <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
+
+    <body name="grass_path" pos="0 0 -0.01">
+        <geom type="plane" size="2.5 0.55 0.01" pos="2.5 0 0" material="mat_grass" />
+    </body>
+
+    <include file="../component/pebble.xml"/>
+
+    <!-- <geom name="floor" type="plane" size="0 0 .1"/> -->
+
+    <body pos="1.5 0.0 0.05" euler="0 0 45">
+      <composite type="particle" count="9 19 1" spacing="0.05" flatinertia="0.01">
+        <skin texcoord="true" inflate="0.005" subgrid="4"/>
+        <geom type="ellipsoid" size="0.025 0.01 0.025" rgba=".8 .2 .1 1" group="4"/>
+        <plugin plugin="mujoco.elasticity.shell">
+          <config key="poisson" value="0"/>
+          <config key="thickness" value="1e-2"/>
+          <!--Units are in Pa (SI)-->
+          <config key="young" value="3e6"/>
+        </plugin>
+      </composite>
+    </body>
+
+    <!-- <body name="pebbles" pos="0 0 0">
+        <geom type="ellipsoid" size="0.06881853450313591 0.06940428036816945 0.059032726740547936" pos="0.5381922847961301 -0.05450587654969419 0" euler="0 0 15.999001535950065" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.06866413771016623 0.04764460934006337 0.05233158665584792" pos="1.8737720965431675 -0.4849640775520031 0" euler="0 0 240.04325330676727" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08931354112991505 0.06054971954383577 0.04638335297025828" pos="2.6615464429596307 -0.23432451767320606 0" euler="0 0 319.939392531904" material="mat_pebble"/>
+        <geom type="sphere" size="0.0339668163312388" pos="1.0760852507305785 0.23235890236501433 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.035168658552695034" pos="2.517751052809701 -0.19451784220386736 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.037500785396324954" pos="3.9229324184528522 0.3087774446514391 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.0684456138420277 0.031938978199237335 0.05379573302158383" pos="4.244668150848733 0.1913645035889181 0" euler="0 0 200.27678444917518" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09335625532410388 0.05218081795057404 0.02150143997489069" pos="2.542702764782911 0.3426858160166265 0" euler="0 0 207.9441952633898" material="mat_pebble"/>
+        <geom type="sphere" size="0.04470086169043393" pos="3.8263704175908493 0.4885214508735539 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.047847039065720555" pos="0.7141005989145432 -0.026030485796408542 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.0613163880148401 0.05131465825809299 0.05969123456615846" pos="3.6337564191542198 -0.4280845722693757 0" euler="0 0 125.80374137185453" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.0983424283681697 0.05632654439808824 0.037691825095924926" pos="1.7392812155248516 -0.008352754199011825 0" euler="0 0 102.24531468191381" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.06798034781298827 0.076610840587528 0.046525700503919507" pos="0.7226550448839786 -0.14480454698819578 0" euler="0 0 174.91857530281703" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.07373260568578424 0.057359712547323194 0.052862632621568054" pos="0.9632894462257535 0.22065829221310262 0" euler="0 0 78.36169956879559" material="mat_pebble"/>
+        <geom type="sphere" size="0.04108816848136152" pos="2.248348669350041 0.413611268398435 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.05006815187534706 0.07901133439796215 0.06747635215475555" pos="4.503841046613575 -0.16664511043122954 0" euler="0 0 24.780159312307497" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08385546698731158 0.07807758499033438 0.0512553172091664" pos="2.7807196875475446 -0.4076358610542816 0" euler="0 0 318.16193395452467" material="mat_pebble"/>
+        <geom type="sphere" size="0.03467253315097092" pos="1.7216049436463388 -0.0479252572160066 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.0397653447211875" pos="2.131084719671476 -0.018646596148394257 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.056769046803371095 0.04219255115829037 0.04066110384400387" pos="0.8187625079540584 -0.4771354537159488 0" euler="0 0 81.7339174379673" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.07475414831424226 0.0731937749736219 0.040537964535745624" pos="0.11849571766424594 0.35237653699145555 0" euler="0 0 186.47512269535642" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08415801525908154 0.05627598792889019 0.06166402181493827" pos="1.7467581056220132 -0.1525509104413597 0" euler="0 0 215.668262314406" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.05691009849266901 0.06788209464749118 0.051755659901191436" pos="2.439183170507946 0.39414622966979773 0" euler="0 0 313.8453308880909" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08442666447556608 0.05938823600182053 0.037638197020769946" pos="3.287094496854432 0.4313313141961179 0" euler="0 0 315.9706470545144" material="mat_pebble"/>
+        <geom type="sphere" size="0.04522475499095554" pos="2.8708153689331954 -0.4378989192470276 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.04172326733251369" pos="2.9242651536324535 -0.08675213981680396 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.035408678460796754" pos="0.8353799908656007 0.3048871245430156 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09067152376498205 0.049154768540142446 0.06679618072234218" pos="3.897686647871418 0.08630267992894769 0" euler="0 0 49.46115407499921" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.07473702685610117 0.05865112306511085 0.03218073269543328" pos="2.3585256376717334 -0.0035880295059811385 0" euler="0 0 181.41338415017339" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09183286754212693 0.06621387780611256 0.04081849265228214" pos="0.6167499936004345 0.4765060905724764 0" euler="0 0 247.56126062212144" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.0921410906873472 0.051025066357478485 0.05677762900657121" pos="3.3223292323950195 -0.1500156913772348 0" euler="0 0 141.22305550139737" material="mat_pebble"/>
+        <geom type="sphere" size="0.03870488395426841" pos="0.12734829995355523 0.08496843432500811 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.0365100478847364" pos="4.9263980820349955 -0.11501681824469123 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.04546410359120477" pos="2.4359721557599756 -0.48846879520626374 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.04744859906490299" pos="1.2003797794742725 0.17355659993055383 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.05089511213753706 0.04230734693854905 0.047081419060753305" pos="2.4329310392547376 0.07191621230116674 0" euler="0 0 277.17994816742583" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08281898057110199 0.07796077079574831 0.03394019734131683" pos="2.477397615710043 -0.29305193090799675 0" euler="0 0 93.78529966210378" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.08733672893374486 0.06050567572746538 0.02000923906720183" pos="3.6675571510504037 -0.08437346015524128 0" euler="0 0 185.90908780452008" material="mat_pebble"/>
+        <geom type="sphere" size="0.04605581469698637" pos="3.1311814958566 0.4614612087944415 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.0928510083721929 0.07541951110724457 0.025310929922241134" pos="2.8581602143913916 0.11914561950507663 0" euler="0 0 346.0738104596657" material="mat_pebble"/>
+        <geom type="sphere" size="0.047889433191309796" pos="1.1577376967902837 0.4845792659911269 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.037620601891753196" pos="0.8438126584920674 -0.16358249305607753 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09184250165201346 0.04922926721069194 0.04756521167051207" pos="2.025661765810641 0.34158711847477974 0" euler="0 0 334.60056165227644" material="mat_pebble"/>
+        <geom type="sphere" size="0.04862616879044973" pos="1.5091681281804377 0.15214186502894733 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.056885400274542634 0.032405467620153464 0.06941827356214376" pos="3.697228340634191 0.447944878575973 0" euler="0 0 8.794819882158302" material="mat_pebble"/>
+        <geom type="sphere" size="0.04148046769442391" pos="3.2031362683439775 0.3767316239482934 0"  material="mat_pebble"/>
+        <geom type="sphere" size="0.03467050986926685" pos="2.570058783274603 -0.4870469369145557 0"  material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09326963542448165 0.04915255867069818 0.06107992877315278" pos="4.886715607040007 -0.10506460672165985 0" euler="0 0 75.421931122004" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.07893655257395463 0.05855653441038157 0.040299467114291" pos="2.9768491015161502 -0.4522424619991522 0" euler="0 0 148.37085374875352" material="mat_pebble"/>
+        <geom type="ellipsoid" size="0.09957231467935412 0.07964433111123467 0.035189484499478396" pos="1.1656639631313248 0.022829828569844612 0" euler="0 0 147.78567781090328" material="mat_pebble"/>
+    </body> -->
+  </worldbody>
+
+</mujoco>
