@@ -1,0 +1,72 @@
+<mujoco>
+	<option timestep="0.0001">
+		<flag gravity="enable" />
+    </option>
+    <extension>
+        <plugin plugin="mujoco.elasticity.cable"/>
+    </extension>
+    <visual>
+        <global realtime="2"/>
+    </visual>
+    
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_0.stl" name="convex0" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_1.stl" name="convex1" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_2.stl" name="convex2" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_3.stl" name="convex3" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_4.stl" name="convex4" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_5.stl" name="convex5" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_6.stl" name="convex6" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_7.stl" name="convex7" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_8.stl" name="convex8" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_9.stl" name="convex9" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_10.stl" name="convex10" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_11.stl" name="convex11" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_12.stl" name="convex12" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_13.stl" name="convex13" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_14.stl" name="convex14" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_15.stl" name="convex15" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_16.stl" name="convex16" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_17.stl" name="convex17" />
+        <mesh scale="0.1 0.1 0.1" file="../mesh/screw/convex_18.stl" name="convex18" />
+
+        <material name="mat_screw" rgba="0.8 0.8 0.8 1"/>
+        <material name="mat_nut" rgba="0.8 0.8 0.8 1"/>
+    </asset>
+    <worldbody>
+        <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
+        <geom name="floor" type="plane" size="0 0 .1"/>
+        <body name="mesh_screw" pos="0 0 2" euler="90 0 0">
+            <freejoint/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex0" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex1" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex2" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex3" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex4" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex5" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex6" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex7" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex8" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex9" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex10" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex11" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex12" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex13" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex14" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex15" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex16" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex17" material="mat_screw"/>
+            <geom type="mesh" mass="1" condim="1" mesh="convex18" material="mat_screw"/>
+        </body>
+
+    <composite prefix="actuated" type="cable" curve="cos(s) sin(s) s" count="41 1 1"
+                size="0.25 .1 4" offset="0 0 .05" initial="none">
+
+        <joint kind="main" damping="0.15" armature="0.01"/>
+        <geom type="capsule" size=".005" rgba=".8 .2 .1 1"/>
+    </composite>
+
+    </worldbody>
+</mujoco>
+ 
