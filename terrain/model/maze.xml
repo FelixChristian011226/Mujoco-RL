@@ -4,6 +4,8 @@
     </extension>
     <asset>
         <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+        <texture builtin="checker" height="100" name="texplane" rgb1="0 0 0" rgb2="0.8 0.8 0.8" type="2d" width="100"/>
+        <material name="MatPlane" reflectance="0.5" shininess="1" specular="1" texrepeat="60 60" texture="texplane"/>
         <mesh file="../mesh/maze/convex_0.stl" name="convex0" />
         <mesh file="../mesh/maze/convex_1.stl" name="convex1" />
         <mesh file="../mesh/maze/convex_2.stl" name="convex2" />
@@ -129,18 +131,12 @@
         <mesh file="../mesh/maze/convex_122.stl" name="convex122" />
         <mesh file="../mesh/maze/convex_123.stl" name="convex123" />
         <mesh file="../mesh/maze/convex_124.stl" name="convex124" />
-        <mesh file="../mesh/maze/convex_125.stl" name="convex125" />
-        <mesh file="../mesh/maze/convex_126.stl" name="convex126" />
-        <mesh file="../mesh/maze/convex_127.stl" name="convex127" />
-        <mesh file="../mesh/maze/convex_128.stl" name="convex128" />
-        <mesh file="../mesh/maze/convex_129.stl" name="convex129" />
-        <mesh file="../mesh/maze/convex_130.stl" name="convex130" />
-        <mesh file="../mesh/maze/convex_131.stl" name="convex131" />
-        <material name="mat_maze" rgba="0.8 0.8 0.8 1"/>
+        <material name="mat_maze" rgba="0.6 0.6 0.6 1"/>
     </asset>
     <worldbody>
         <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
-        <geom name="floor" type="plane" size="0 0 .1"/>
+        <!-- <geom name="floor" type="plane" size="0 0 .1"/> -->
+        <geom conaffinity="1" condim="3" material="MatPlane" name="floor" pos="0 0 0" rgba="0.8 0.9 0.8 1" size="40 40 40" type="plane"/>
         <body name="mesh_maze" pos="0 0 0" euler="90 0 0">
             <geom type="mesh" mesh="convex0" material="mat_maze"/>
             <geom type="mesh" mesh="convex1" material="mat_maze"/>
@@ -267,13 +263,6 @@
             <geom type="mesh" mesh="convex122" material="mat_maze"/>
             <geom type="mesh" mesh="convex123" material="mat_maze"/>
             <geom type="mesh" mesh="convex124" material="mat_maze"/>
-            <geom type="mesh" mesh="convex125" material="mat_maze"/>
-            <geom type="mesh" mesh="convex126" material="mat_maze"/>
-            <geom type="mesh" mesh="convex127" material="mat_maze"/>
-            <geom type="mesh" mesh="convex128" material="mat_maze"/>
-            <geom type="mesh" mesh="convex129" material="mat_maze"/>
-            <geom type="mesh" mesh="convex130" material="mat_maze"/>
-            <geom type="mesh" mesh="convex131" material="mat_maze"/>
         </body>
         <body pos="1.5 0.0 25" euler="0 0 45">
             <composite type="particle" count="9 19 1" spacing="0.5" flatinertia="0.01">
