@@ -1,0 +1,87 @@
+
+<mujoco model="Humanoid and 100 objects">
+<!-- Degree of Freedom: 627
+     Actuators: 21
+
+     Humanoid and 100 free primitive objects.
+-->
+  <option timestep="0.005"/>
+
+  <!-- <size memory="100M"/> -->
+
+  <default>
+    <geom solimp=".9 .9 .01"/>
+    <default class="capsule">
+      <geom type="capsule" material="capsule" size="0.1 0.05"/>
+    </default>
+    <default class="ellipsoid">
+      <geom type="ellipsoid" material="ellipsoid" size="0.15 0.1 0.07"/>
+    </default>
+    <default class="box">
+      <geom type="box" material="box" size="0.15 0.1 0.05"/>
+    </default>
+    <default class="cylinder">
+      <geom type="cylinder" material="cylinder" size="0.1 0.05" condim="4" friction="1 .01 .01"/>
+    </default>
+    <default class="sphere">
+      <geom type="sphere" material="sphere" size="0.1"/>
+    </default>
+    <default class="border">
+      <geom type="capsule" size="0.4" rgba=".4 .4 .4 1"/>
+    </default>
+    <default class="borderpost">
+      <geom type="box" size="0.41 0.41 0.41" rgba=".55 .55 .55 1"/>
+    </default>
+  </default>
+
+  <asset>
+    <texture type="skybox" builtin="gradient" width="512" height="512" rgb1=".4 .6 .8" rgb2="0 0 0"/>
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="128" height="128"
+             rgb1="0.6 0.6 0.6" rgb2="0.6 0.6 0.6" markrgb="1 1 1"/>
+    <texture name="texplane" type="2d" builtin="checker" rgb1=".4 .4 .4" rgb2=".6 .6 .6"
+             width="512" height="512"/>
+    <material name="MatPlane" reflectance="0.3" texture="texplane" texrepeat="1 1" texuniform="true"
+              rgba=".7 .7 .7 1"/>
+    <material name="capsule" texture="texgeom" texuniform="true" rgba=".4 .9 .6 1" />
+    <material name="ellipsoid" texture="texgeom" texuniform="true" rgba=".4 .6 .9 1" />
+    <material name="box" texture="texgeom" texuniform="true" rgba=".4 .9 .9 1" />
+    <material name="cylinder" texture="texgeom" texuniform="true" rgba=".8 .6 .8 1" />
+    <material name="sphere" texture="texgeom" texuniform="true" rgba=".9 .1 .1 1" />
+    <model name="humanoid" file="humanoid_body.xml"/>
+  </asset>
+
+  <visual>
+    <quality shadowsize="4096" offsamples="8"/>
+    <map znear="0.1" force="0.05"/>
+  </visual>
+
+  <statistic extent="4"/>
+
+  <worldbody>
+    <light directional="true" diffuse=".8 .8 .8" pos="0 0 10" dir="0 0 -10"/>
+    <geom name="floor" type="plane" pos = "0 0 -2" size="5 5 .5" material="MatPlane"/>
+    <geom name="level1" type="box" pos = "0 0 -1.8" size="2.4 2.4 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level2" type="box" pos = "0 0 -1.6" size="2 2 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level3" type="box" pos = "0 0 -1.4" size="1.6 1.6 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level4" type="box" pos = "0 0 -1.2" size="1.2 1.2 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level5" type="box" pos = "0 0 -1." size="0.8 0.8 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level6" type="box" pos = "0 0 -0.8" size="0.4 0.4 .1" rgba=".55 .55 .55 1"/>
+    <geom name="level7" type="box" pos = "0 0 -0.6" size="0.1 0.1 .1" rgba=".55 .55 .55 1"/>
+    <replicate count="60" euler="0 0 16.36" sep="-" offset="0.5 0 0">
+      <attach model="humanoid" body="torso" prefix="_"/>
+    </replicate>
+    
+    <frame pos="-2 -2 2.5">
+      <replicate count="5" offset="0 1 0" euler="0 180 0">
+        <frame pos="0 0 -1.5">
+          <replicate count="4" offset="0 0 1" euler="0 0 60">
+            <body euler="30 40 0">
+              <freejoint/>
+              <geom class="capsule"/>
+            </body>
+          </replicate>
+        </frame>
+      </replicate>
+    </frame>
+  </worldbody>
+</mujoco>
