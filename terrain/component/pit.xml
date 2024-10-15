@@ -1,0 +1,36 @@
+<worldbody>
+    <body name="pit" pos="0 0 0.05">
+        <body name="pit1" pos="0 0 0" euler="0 0 0">
+            <geom type="box" size="0.3 0.3 0.05" pos="0 0 0" material="mat_pit"/>
+            <geom type="box" size="0.15 0.5 0.05" pos="0.35 0 0.1" material="mat_pit"/>
+            <geom type="box" size="0.15 0.7 0.05" pos="0.55 0 0.2" material="mat_pit"/>
+            <geom type="box" size="0.15 0.9 0.05" pos="0.75 0 0.3" material="mat_pit"/>
+            <geom type="box" size="0.15 1.1 0.05" pos="0.95 0 0.4" material="mat_pit"/>
+            <geom type="box" size="0.15 1.3 0.05" pos="1.15 0 0.5" material="mat_pit"/>
+        </body>
+        <body name="pit2" pos="0 0 0" euler="0 0 90">
+            <geom type="box" size="0.3 0.3 0.05" pos="0 0 0" material="mat_pit"/>
+            <geom type="box" size="0.15 0.2 0.05" pos="0.35 0 0.1" material="mat_pit"/>
+            <geom type="box" size="0.15 0.4 0.05" pos="0.55 0 0.2" material="mat_pit"/>
+            <geom type="box" size="0.15 0.6 0.05" pos="0.75 0 0.3" material="mat_pit"/>
+            <geom type="box" size="0.15 0.8 0.05" pos="0.95 0 0.4" material="mat_pit"/>
+            <geom type="box" size="0.15 1.0 0.05" pos="1.15 0 0.5" material="mat_pit"/>
+        </body>
+        <body name="pit3" pos="0 0 0" euler="0 0 180">
+            <geom type="box" size="0.3 0.3 0.05" pos="0 0 0" material="mat_pit"/>
+            <geom type="box" size="0.15 0.5 0.05" pos="0.35 0 0.1" material="mat_pit"/>
+            <geom type="box" size="0.15 0.7 0.05" pos="0.55 0 0.2" material="mat_pit"/>
+            <geom type="box" size="0.15 0.9 0.05" pos="0.75 0 0.3" material="mat_pit"/>
+            <geom type="box" size="0.15 1.1 0.05" pos="0.95 0 0.4" material="mat_pit"/>
+            <geom type="box" size="0.15 1.3 0.05" pos="1.15 0 0.5" material="mat_pit"/>
+        </body>
+        <body name="pit4" pos="0 0 0" euler="0 0 270">
+            <geom type="box" size="0.3 0.3 0.05" pos="0 0 0" material="mat_pit"/>
+            <geom type="box" size="0.15 0.2 0.05" pos="0.35 0 0.1" material="mat_pit"/>
+            <geom type="box" size="0.15 0.4 0.05" pos="0.55 0 0.2" material="mat_pit"/>
+            <geom type="box" size="0.15 0.6 0.05" pos="0.75 0 0.3" material="mat_pit"/>
+            <geom type="box" size="0.15 0.8 0.05" pos="0.95 0 0.4" material="mat_pit"/>
+            <geom type="box" size="0.15 1.0 0.05" pos="1.15 0 0.5" material="mat_pit"/>
+        </body>
+    </body>
+</worldbody>

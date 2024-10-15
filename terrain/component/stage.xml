@@ -1,0 +1,10 @@
+<worldbody>
+    <body name="stage" pos="0 0 0.05">
+        <geom type="box" size="0.2 0.2 0.05" pos="0 0 0.5" material="mat_stage"/>
+        <geom type="box" size="0.4 0.4 0.05" pos="0 0 0.4" material="mat_stage"/>
+        <geom type="box" size="0.6 0.6 0.05" pos="0 0 0.3" material="mat_stage"/>
+        <geom type="box" size="0.8 0.8 0.05" pos="0 0 0.2" material="mat_stage"/>
+        <geom type="box" size="1.0 1.0 0.05" pos="0 0 0.1" material="mat_stage"/>
+        <geom type="box" size="1.2 1.2 0.05" pos="0 0 0.0" material="mat_stage"/>
+    </body>
+</worldbody>
