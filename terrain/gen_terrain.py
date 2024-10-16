@@ -73,7 +73,7 @@ class Page1(wx.Panel):
         v_box_sizer.Add(self.horizontal_shift, proportion=0, flag=wx.EXPAND)
 
         # 添加按钮并绑定事件
-        generate_button = wx.Button(self, label="生成楼梯XML文件")
+        generate_button = wx.Button(self, label="生成XML文件")
         generate_button.Bind(wx.EVT_BUTTON, self.on_generate_button)
         v_box_sizer.Add(generate_button, proportion=0, flag=wx.EXPAND | wx.ALL, border=10)
 
