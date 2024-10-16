@@ -142,7 +142,7 @@ class Page2(wx.Panel):
         v_box_sizer.Add(self.path_width, proportion=0, flag=wx.EXPAND)
 
         # 添加按钮并绑定事件
-        generate_button = wx.Button(self, label="生成石子路XML文件")
+        generate_button = wx.Button(self, label="生成XML文件")
         generate_button.Bind(wx.EVT_BUTTON, self.on_generate_button)
         v_box_sizer.Add(generate_button, proportion=0, flag=wx.EXPAND | wx.ALL, border=10)
 
@@ -213,7 +213,7 @@ class Page3(wx.Panel):
         v_box_sizer.Add(self.horizontal_shift, proportion=0, flag=wx.EXPAND)
 
         # 添加按钮并绑定事件
-        generate_button = wx.Button(self, label="生成坑XML文件")
+        generate_button = wx.Button(self, label="生成XML文件")
         generate_button.Bind(wx.EVT_BUTTON, self.on_generate_button)
         v_box_sizer.Add(generate_button, proportion=0, flag=wx.EXPAND | wx.ALL, border=10)
 
@@ -286,7 +286,7 @@ class Page4(wx.Panel):
         v_box_sizer.Add(self.horizontal_shift, proportion=0, flag=wx.EXPAND)
 
         # 添加按钮并绑定事件
-        generate_button = wx.Button(self, label="生成台XML文件")
+        generate_button = wx.Button(self, label="生成XML文件")
         generate_button.Bind(wx.EVT_BUTTON, self.on_generate_button)
         v_box_sizer.Add(generate_button, proportion=0, flag=wx.EXPAND | wx.ALL, border=10)
 
@@ -321,6 +321,77 @@ class Page4(wx.Panel):
         except subprocess.CalledProcessError as e:
             wx.MessageBox(f"Error occurred: {str(e)}", 'Error', wx.OK | wx.ICON_ERROR)
 
+class Page5(wx.Panel):
+    def __init__(self,parent):
+        wx.Panel.__init__(self, parent)
+
+        # 创建垂直的BoxSizer用于布局
+        v_box_sizer = wx.BoxSizer(wx.VERTICAL)
+
+        # 添加图片到页面顶部
+        image_path = "./sample_image/trench.png"
+        if os.path.exists(image_path):
+            image = wx.Image(image_path, wx.BITMAP_TYPE_PNG)
+            image = image.Scale(600, 400)  # 调整图片大小
+            image_ctrl = wx.StaticBitmap(self, bitmap=wx.Bitmap(image))
+            v_box_sizer.Add(image_ctrl, proportion=0, flag=wx.ALIGN_CENTER | wx.ALL, border=10)
+        else:
+            v_box_sizer.Add(wx.StaticText(self, label="Image not found"), proportion=0, flag=wx.ALIGN_CENTER | wx.ALL, border=10)
+
+
+        # 添加输入框和标签，带默认值
+        self.length = PlaceholderTextCtrl(self, "5")
+        self.unit_length = PlaceholderTextCtrl(self, "0.5")
+        self.y_scale = PlaceholderTextCtrl(self, "1.0")
+        self.z_scale = PlaceholderTextCtrl(self, "1.0")
+
+        v_box_sizer.Add(wx.StaticText(self, label='沟长度(length):'), proportion=0, flag=wx.EXPAND)
+        v_box_sizer.Add(self.length, proportion=0, flag=wx.EXPAND)
+
+        v_box_sizer.Add(wx.StaticText(self, label='单位长度(unit_length):'), proportion=0, flag=wx.EXPAND)
+        v_box_sizer.Add(self.unit_length, proportion=0, flag=wx.EXPAND)
+
+        v_box_sizer.Add(wx.StaticText(self, label='y轴缩放比(y_scale):'), proportion=0, flag=wx.EXPAND)
+        v_box_sizer.Add(self.y_scale, proportion=0, flag=wx.EXPAND)
+
+        v_box_sizer.Add(wx.StaticText(self, label='z轴缩放比(z_scale):'), proportion=0, flag=wx.EXPAND)
+        v_box_sizer.Add(self.z_scale, proportion=0, flag=wx.EXPAND)
+
+        # 添加按钮并绑定事件
+        generate_button = wx.Button(self, label="生成XML文件")
+        generate_button.Bind(wx.EVT_BUTTON, self.on_generate_button)
+        v_box_sizer.Add(generate_button, proportion=0, flag=wx.EXPAND | wx.ALL, border=10)
+
+        # 创建一个透明的面板，覆盖在其他控件之上
+        self.transparent_panel = wx.Panel(self, size=self.GetSize())
+        self.transparent_panel.SetBackgroundColour(wx.Colour(0, 0, 0, 0))  # 设置为透明
+        self.transparent_panel.Bind(wx.EVT_LEFT_DOWN, self.on_click_blank)
+
+
+        self.SetSizer(v_box_sizer)
+
+        # 绑定面板的鼠标点击事件
+        self.Bind(wx.EVT_LEFT_DOWN, self.on_click_blank)
+
+    def on_click_blank(self, event):
+        self.transparent_panel.SetFocus()
+
+    def on_generate_button(self, event):
+        # 获取输入的参数
+        length = self.length.GetValue()
+        unit_length = self.unit_length.GetValue()
+        y_scale = self.y_scale.GetValue()
+        z_scale = self.z_scale.GetValue()
+
+        # 使用subprocess调用外部Python文件
+        try:
+            subprocess.run([
+                "python3", "./gen_component/gen_trench.py",
+                length, unit_length, y_scale, z_scale
+            ], check=True)
+            wx.MessageBox('XML file generated successfully!', 'Success', wx.OK | wx.ICON_INFORMATION)
+        except subprocess.CalledProcessError as e:
+            wx.MessageBox(f"Error occurred: {str(e)}", 'Error', wx.OK | wx.ICON_ERROR)
  
 if __name__ == '__main__':
     app = wx.App(False)
@@ -331,5 +402,6 @@ if __name__ == '__main__':
     nb.AddPage(Page2(nb),"石子路")
     nb.AddPage(Page3(nb),"坑")
     nb.AddPage(Page4(nb),"台")
+    nb.AddPage(Page5(nb),"沟")
     frame.Show()
     app.MainLoop()
