@@ -1,0 +1,24 @@
+
+  <actuator>
+    <motor gear="40"  joint="2a_abdomen_y"/>
+    <motor gear="40"  joint="2a_abdomen_z"/>
+    <motor gear="40"  joint="2a_abdomen_x"/>
+    <motor gear="40"  joint="2a_right_hip_x"/>
+    <motor gear="40"  joint="2a_right_hip_z"/>
+    <motor gear="120" joint="2a_right_hip_y"/>
+    <motor gear="80"  joint="2a_right_knee"/>
+    <motor gear="20"  joint="2a_right_ankle_x"/>
+    <motor gear="20"  joint="2a_right_ankle_y"/>
+    <motor gear="40"  joint="2a_left_hip_x"/>
+    <motor gear="40"  joint="2a_left_hip_z"/>
+    <motor gear="120" joint="2a_left_hip_y"/>
+    <motor gear="80"  joint="2a_left_knee"/>
+    <motor gear="20"  joint="2a_left_ankle_x"/>
+    <motor gear="20"  joint="2a_left_ankle_y"/>
+    <motor gear="20"  joint="2a_right_shoulder1"/>
+    <motor gear="20"  joint="2a_right_shoulder2"/>
+    <motor gear="40"  joint="2a_right_elbow"/>
+    <motor gear="20"  joint="2a_left_shoulder1"/>
+    <motor gear="20"  joint="2a_left_shoulder2"/>
+    <motor gear="40"  joint="2a_left_elbow"/>
+  </actuator>
