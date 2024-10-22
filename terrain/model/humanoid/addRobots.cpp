@@ -25,6 +25,11 @@ void addHead(const char* filename) {
 	fclose(file);
 }
 
+/**
+ * 覆盖性，将inputfile的内容覆盖到outputfile
+ * @param inputfile 输入文件名
+ * @param outputfile 输出文件名
+ */
 void setFileToFile(const char* inputfile, const char* outputfile) {
 	FILE* file = fopen(inputfile, "rt");
 	char line[1024];
@@ -38,6 +43,11 @@ void setFileToFile(const char* inputfile, const char* outputfile) {
 	fclose(file);
 }
 
+/**
+ * 追加性，将inputfile的内容追加到outputfile
+ * @param inputfile 输入文件名
+ * @param outputfile 输出文件名
+ */
 void addFileToFile(const char* inputfile, const char* outputfile) {
 	FILE* file = fopen(inputfile, "rt");
 	char line[1024];
@@ -271,6 +281,16 @@ buildStair(double offsetx, double offsety, double offsetz,
 /**
  * 生成一个沟
  * @param outputfile 输出文件名
+ * @param offsetx x方向偏移
+ * @param offsety y方向偏移
+ * @param offsetz z方向偏移
+ * @param head 头部长度
+ * @param tail 尾部长度
+ * @param extent 沟的宽度
+ * @param thick 沟的厚度
+ * @param depth 沟的深度
+ * @param rotate 旋转方向
+ * @param num 沟的数量
  */
 void addGutterToFile(const char* outputfile, double offsetx, double offsety, double offsetz,
 	double head, double tail, double extent, double thick,
@@ -487,35 +507,66 @@ int addStandToFile(const char* outputfile, int i, int j, bool flag, double iz, d
 	return 0;
 }
 
+/**
+ * 生成随机数
+ * @param min 最小值
+ * @param max 最大值
+ * @return 随机数
+ */
+double random_double(double min, double max) {
+    std::random_device rd;
+    std::mt19937 gen(rd());
+    std::uniform_real_distribution<> dis(min, max);
+    return dis(gen);
+}
+
+/**
+ * 生成随机石子
+ * @param outputfile 输出文件名
+ * @param offsetx x方向偏移
+ * @param offsety y方向偏移
+ * @param offsetz z方向偏移
+ * @param num_levels 层数
+ * @param deltaH 每层高度
+ * @param density 密度，即每层石子的数量
+ * @param pebble_scale 石子缩放比例
+ */
+void addPebbleToFile(const char* outputfile, double offsetx, double offsety, double offsetz,
+	int num_levels, double deltaH, int density, double pebble_scale=1.0)
+{
+	fstream f;
+	f.open(outputfile, ios::out|ios::app);
+
+	addRectToFile(outputfile, 0, 0, -0.02, scale/2, scale/2, 0.02, offsetx, offsety, offsetz);
+	for(int level = 0; level < num_levels; ++level) {
+		for(int i = 0; i < density; ++i) {
+			double radius_x = random_double(0.07*pebble_scale, 0.10*pebble_scale);
+			double radius_y = random_double(0.04*pebble_scale, 0.07*pebble_scale);
+			double radius_z = random_double(0.03*pebble_scale, 0.04*pebble_scale);
+			double bound = radius_x/2;
+			double x = random_double(-scale/2+bound, scale/2-bound);
+			double y = random_double(-scale/2+bound, scale/2-bound);
+			double z = level * deltaH;
+			double z_rotation = random_double(0, 360);
+			std::string euler_str = "euler=\"0 0 " + std::to_string(z_rotation) + "\"";
+			f << "    <geom type=\"ellipsoid\" size=\"" << radius_x << " " << radius_y << " " << radius_z << "\" pos=\"" << x+offsetx << " " << y+offsety << " " << z + radius_z/2 + offsetz << "\" " << euler_str << " material=\"mat_pebble\"/>\n";
+		}
+	}
+
+	f.close();
+}
+
+/**
+ * 向文件中添加内容
+ * @param outputfile 输出文件名
+ * @param content 要添加的内容
+ */
 void addContentToFile(const char* outputfile, string content)
 {
 	fstream f;
 	f.open(outputfile, ios::out|ios::app);
 	f << content;
 	f.close();
-}
-
-void genHeightField(const char* filename, int rows, int cols) {
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::normal_distribution<float> dist(0.0f, 1.0f);
-
-    std::ofstream file(filename);
-    if (!file.is_open()) {
-        std::cerr << "无法打开文件: " << filename << std::endl;
-        return;
-    }
-
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j) {
-            float height = dist(gen);
-            file << height << " ";
-        }
-        file << "\n";
-    }
-
-    file.close();
-    std::cout << "高场数据已生成并保存到: " << filename << std::endl;
 }
 
 /**
@@ -527,7 +578,6 @@ void genHeightField(const char* filename, int rows, int cols) {
  * @param meanX X方向的均值
  * @param meanY Y方向的均值
  */
-
 void genNDHeightField(string filename, int radius, float stddevX, float stddevY, float meanX=0, float meanY=0)
 {
 	std::ofstream file(filename, std::ios::binary);
@@ -549,9 +599,19 @@ void genNDHeightField(string filename, int radius, float stddevX, float stddevY,
 	file.write(reinterpret_cast<const char*>(height_data.data()), height_data.size() * sizeof(float));
 
 	file.close();
-	std::cout << "高度场数据已生成并保存到: " << filename << std::endl;
+	// std::cout << "高度场数据已生成并保存到: " << filename << std::endl;
 }
 
+/**
+ * 向Mujoco的Asset中添加高场资源的引用
+ * @param filename 输出文件名
+ * @param hfieldname 高度场文件名
+ * @param index 高度场索引
+ * @param radius_x 高度场的X方向半径（事实上就是x方向的size）
+ * @param radius_y 高度场的Y方向半径（事实上就是y方向的size）
+ * @param elevation_z 高度场的高度比例
+ * @param base_z 高度场的基础高度
+ */
 void addHfieldAssetToFile(string filename, string hfieldname,int index, double radius_x, double radius_y, double elevation_z, double base_z)
 {
 	fstream f;
@@ -559,9 +619,16 @@ void addHfieldAssetToFile(string filename, string hfieldname,int index, double r
 	f << "    <hfield file=\"" << hfieldname << "\" name=\"heightfield_" << index << "\"  size=\"" << radius_x << " " << radius_y << " " << elevation_z << " " << base_z << "\"/>\n";
 }
 
+/**
+ * 向Mujoco的Worldbody中添加高场
+ * @param filename 输出文件名
+ * @param i x方向索引
+ * @param j y方向索引
+ * @param hfieldname 高度场文件名
+ * @param index 高度场索引
+ */
 void addHeightFieldToFile(string filename, int i, int j, string hfieldname, int index)
 {
-	// <geom hfield="heightfield" pos="0 0 0" rgba="0.8 0.9 0.8 1" type="hfield"/>
 	fstream f;
 	f.open(filename, ios::out|ios::app);
 	f << "    <geom hfield=\"heightfield_" << index << "\" pos=\"" << i*scale << " " << j*scale << " -1.475\" type=\"hfield\"/>\n";
@@ -592,7 +659,7 @@ int main()
 	std::uniform_real_distribution<> dis(0, 360);
 	int idx = 0;
 
-	// 地形种类
+	const char* outputfile = "out.xml";
 	vector<int> type;	//0: stand, 1: stair, 2: gutter, 3: pebble, 4: heightfield
 	int cnt_hfield = 0;
 	int cnt = 0;
@@ -605,23 +672,23 @@ int main()
 	}
 	
 	double height;
-	setFileToFile("head1.txt", "testout.xml");
+	setFileToFile("head1.txt", outputfile);
 	for (auto t : type) {
 		if (t == 4) {
 			hfield_name = "./hfield/heightfield_"+to_string(cnt_hfield)+".bin";
 			//随机生成1.0~2.0之间的高度
 			height = 1.0 + (rand() % 101) * 0.01;
-			addHfieldAssetToFile("testout.xml", hfield_name, cnt_hfield, scale/2, scale/2, height, 0.1f);
+			addHfieldAssetToFile(outputfile, hfield_name, cnt_hfield, scale/2, scale/2, height, 0.1f);
 			genNDHeightField(hfield_name, 100, 50.0f, 50.0f, 0.0f, 0.0f);
 			cnt_hfield++;
 		}
 	}
-	addFileToFile("head2.txt", "testout.xml");
+	addFileToFile("head2.txt", outputfile);
 
 	cnt_hfield = 0;
 	double angle;
-	int stair_rotate, stair_num, gutter_rotate, gutter_num;
-	double stair_deltaH, gutter_head, gutter_tail, gutter_depth;
+	int stair_rotate, stair_num, gutter_rotate, gutter_num, pebble_level, pebble_density;
+	double stair_deltaH, gutter_head, gutter_tail, gutter_depth, pebble_scale;
 	// addHead("head.txt");
 #if 1
 	for (int i = -N; i <= N; i++) {
@@ -632,34 +699,40 @@ int main()
 					if(i == 0 && j == 0)
 						continue;
 					angle =dis(gen);
-					cout << "angle: " << angle << endl;
+					// cout << "angle: " << angle << endl;
 					// addStand(i, j, angle > 180, -1.5, 0.05);
 					// printf("\n");
-					addStandToFile("testout.xml", i, j, angle > 180, -1.5, 0.05);
-					addContentToFile("testout.xml", "\n");
+					addStandToFile(outputfile, i, j, angle > 180, -1.5, 0.05);
+					addContentToFile(outputfile, "\n");
 					break;
 				case 1:	//stair
 					// 生成随机数，方向0~3，层高0.03~0.06，级数10~20
 					stair_rotate = rand() % 4;
 					stair_deltaH = 0.03 + (rand() % 4) * 0.01;
 					stair_num = 10 + rand() % 11;
-					addStairToFile("testout.xml", i*scale, j*scale, -1.475, stair_rotate, 0.04, stair_deltaH, stair_num);
-					addContentToFile("testout.xml", "\n");
+					addStairToFile(outputfile, i*scale, j*scale, -1.475, stair_rotate, 0.04, stair_deltaH, stair_num);
+					addContentToFile(outputfile, "\n");
 					break;
 				case 2:	//gutter
-					// 生成随机数，方向0~1，头尾0.1~0.5，深度0.1~0.2，数量6~12
+					// 生成随机数，头尾0.1~0.5，数量6~12，深度0.1~0.2，方向0~1
 					gutter_head = 0.1 + (rand() % 4) * 0.1;
 					gutter_tail = 0.1 + (rand() % 4) * 0.1;
 					gutter_num = 6 + rand() % 7;
 					gutter_depth = 0.1 + (rand() % 2) * 0.1;
 					gutter_rotate = rand() % 2;
-					addGutterToFile("testout.xml", i*scale, j*scale, -1.475, gutter_head, gutter_tail, scale, 0.02, gutter_depth, gutter_rotate, 8);
+					addGutterToFile(outputfile, i*scale, j*scale, -1.475, gutter_head, gutter_tail, scale, 0.02, gutter_depth, gutter_rotate, 8);
 					break;
 				case 3:	//pebble
+					// 生成随机数，层数2~4，密度100~200，缩放1.0~2.0
+					pebble_level = 2 + rand() % 3;
+					pebble_density = 100 + rand() % 101;
+					pebble_scale = 1.0 + (rand() % 101) * 0.01;
+					addPebbleToFile(outputfile, i*scale, j*scale, -1.475, pebble_level, 0.04, pebble_density, pebble_scale);
+					addContentToFile(outputfile, "\n");
 					break;
 				case 4:	//heightfield
-					addHeightFieldToFile("testout.xml", i, j, hfield_name, cnt_hfield);
-					addContentToFile("testout.xml", "\n");
+					addHeightFieldToFile(outputfile, i, j, hfield_name, cnt_hfield);
+					addContentToFile(outputfile, "\n");
 					cnt_hfield++;
 					break;
 
@@ -678,24 +751,25 @@ int main()
 			double ty = (dis(gen) - 180) / 180.0 * scale * 0.1;
 			// addRobot("robot.txt", i, j, tx, ty, angle, idx++);
 			// printf("\n");
-			addRobotToFile("robot.txt", "testout.xml", i, j, tx, ty, angle, idx++);
-			addContentToFile("testout.xml", "\n");
+			addRobotToFile("robot.txt", outputfile, i, j, tx, ty, angle, idx++);
+			addContentToFile(outputfile, "\n");
 
 		}
 	}
 
 	// printf("  </worldbody>\n");
-	addContentToFile("testout.xml", "  </worldbody>\n");
+	addContentToFile(outputfile, "  </worldbody>\n");
 
 	idx=0;
 	for (int i = -N; i <= N; i++) {
 		for (int j = -M; j <= M; j++) {
 			// addActuator("actuator.txt", idx++);
-			addActuatorToFile("actuator.txt", "testout.xml", idx++);
+			addActuatorToFile("actuator.txt", outputfile, idx++);
 		}
 	}
 
 	// printf("</mujoco>\n\n");
-	addContentToFile("testout.xml", "</mujoco>\n\n");
+	addContentToFile(outputfile, "</mujoco>\n\n");
+	cout << "文件已保存到" << outputfile << endl;
 	return 0;
 }
