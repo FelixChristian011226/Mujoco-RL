@@ -5,12 +5,12 @@
     <extension>
     </extension>
     <visual>
-        <global realtime="10"/>
+        <global realtime="2"/>
     </visual>
     
     <asset>
         <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
-   <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="128" height="128"
+    <texture name="texgeom" type="cube" builtin="flat" mark="cross" width="128" height="128"
              rgb1="0.6 0.6 0.6" rgb2="0.6 0.6 0.6" markrgb="1 1 1"/>
     <texture name="texplane" type="2d" builtin="checker" rgb1=".4 .4 .4" rgb2=".6 .6 .6"
              width="512" height="512"/>
@@ -167,6 +167,94 @@
         <mesh file="../mesh/nut/convex_127.stl" name="nut_convex127" />
         <mesh file="../mesh/nut/convex_128.stl" name="nut_convex128" />
         <mesh file="../mesh/nut/convex_129.stl" name="nut_convex129" />
+        <mesh file="../mesh/nut/convex_130.stl" name="nut_convex130" />
+        <mesh file="../mesh/nut/convex_131.stl" name="nut_convex131" />
+        <mesh file="../mesh/nut/convex_132.stl" name="nut_convex132" />
+        <mesh file="../mesh/nut/convex_133.stl" name="nut_convex133" />
+        <mesh file="../mesh/nut/convex_134.stl" name="nut_convex134" />
+        <mesh file="../mesh/nut/convex_135.stl" name="nut_convex135" />
+        <mesh file="../mesh/nut/convex_136.stl" name="nut_convex136" />
+        <mesh file="../mesh/nut/convex_137.stl" name="nut_convex137" />
+        <mesh file="../mesh/nut/convex_138.stl" name="nut_convex138" />
+        <mesh file="../mesh/nut/convex_139.stl" name="nut_convex139" />
+        <mesh file="../mesh/nut/convex_140.stl" name="nut_convex140" />
+        <mesh file="../mesh/nut/convex_141.stl" name="nut_convex141" />
+        <mesh file="../mesh/nut/convex_142.stl" name="nut_convex142" />
+        <mesh file="../mesh/nut/convex_143.stl" name="nut_convex143" />
+        <mesh file="../mesh/nut/convex_144.stl" name="nut_convex144" />
+        <mesh file="../mesh/nut/convex_145.stl" name="nut_convex145" />
+        <mesh file="../mesh/nut/convex_146.stl" name="nut_convex146" />
+        <mesh file="../mesh/nut/convex_147.stl" name="nut_convex147" />
+        <mesh file="../mesh/nut/convex_148.stl" name="nut_convex148" />
+        <mesh file="../mesh/nut/convex_149.stl" name="nut_convex149" />
+        <mesh file="../mesh/nut/convex_150.stl" name="nut_convex150" />
+        <mesh file="../mesh/nut/convex_151.stl" name="nut_convex151" />
+        <mesh file="../mesh/nut/convex_152.stl" name="nut_convex152" />
+        <mesh file="../mesh/nut/convex_153.stl" name="nut_convex153" />
+        <mesh file="../mesh/nut/convex_154.stl" name="nut_convex154" />
+        <mesh file="../mesh/nut/convex_155.stl" name="nut_convex155" />
+        <mesh file="../mesh/nut/convex_156.stl" name="nut_convex156" />
+        <mesh file="../mesh/nut/convex_157.stl" name="nut_convex157" />
+        <mesh file="../mesh/nut/convex_158.stl" name="nut_convex158" />
+        <mesh file="../mesh/nut/convex_159.stl" name="nut_convex159" />
+        <mesh file="../mesh/nut/convex_160.stl" name="nut_convex160" />
+        <mesh file="../mesh/nut/convex_161.stl" name="nut_convex161" />
+        <mesh file="../mesh/nut/convex_162.stl" name="nut_convex162" />
+        <mesh file="../mesh/nut/convex_163.stl" name="nut_convex163" />
+        <mesh file="../mesh/nut/convex_164.stl" name="nut_convex164" />
+        <mesh file="../mesh/nut/convex_165.stl" name="nut_convex165" />
+        <mesh file="../mesh/nut/convex_166.stl" name="nut_convex166" />
+        <mesh file="../mesh/nut/convex_167.stl" name="nut_convex167" />
+        <mesh file="../mesh/nut/convex_168.stl" name="nut_convex168" />
+        <mesh file="../mesh/nut/convex_169.stl" name="nut_convex169" />
+        <mesh file="../mesh/nut/convex_170.stl" name="nut_convex170" />
+        <mesh file="../mesh/nut/convex_171.stl" name="nut_convex171" />
+        <mesh file="../mesh/nut/convex_172.stl" name="nut_convex172" />
+        <mesh file="../mesh/nut/convex_173.stl" name="nut_convex173" />
+        <mesh file="../mesh/nut/convex_174.stl" name="nut_convex174" />
+        <mesh file="../mesh/nut/convex_175.stl" name="nut_convex175" />
+        <mesh file="../mesh/nut/convex_176.stl" name="nut_convex176" />
+        <mesh file="../mesh/nut/convex_177.stl" name="nut_convex177" />
+        <mesh file="../mesh/nut/convex_178.stl" name="nut_convex178" />
+        <mesh file="../mesh/nut/convex_179.stl" name="nut_convex179" />
+        <mesh file="../mesh/nut/convex_180.stl" name="nut_convex180" />
+        <mesh file="../mesh/nut/convex_181.stl" name="nut_convex181" />
+        <mesh file="../mesh/nut/convex_182.stl" name="nut_convex182" />
+        <mesh file="../mesh/nut/convex_183.stl" name="nut_convex183" />
+        <mesh file="../mesh/nut/convex_184.stl" name="nut_convex184" />
+        <mesh file="../mesh/nut/convex_185.stl" name="nut_convex185" />
+        <mesh file="../mesh/nut/convex_186.stl" name="nut_convex186" />
+        <mesh file="../mesh/nut/convex_187.stl" name="nut_convex187" />
+        <mesh file="../mesh/nut/convex_188.stl" name="nut_convex188" />
+        <mesh file="../mesh/nut/convex_189.stl" name="nut_convex189" />
+        <mesh file="../mesh/nut/convex_190.stl" name="nut_convex190" />
+        <mesh file="../mesh/nut/convex_191.stl" name="nut_convex191" />
+        <mesh file="../mesh/nut/convex_192.stl" name="nut_convex192" />
+        <mesh file="../mesh/nut/convex_193.stl" name="nut_convex193" />
+        <mesh file="../mesh/nut/convex_194.stl" name="nut_convex194" />
+        <mesh file="../mesh/nut/convex_195.stl" name="nut_convex195" />
+        <mesh file="../mesh/nut/convex_196.stl" name="nut_convex196" />
+        <mesh file="../mesh/nut/convex_197.stl" name="nut_convex197" />
+        <mesh file="../mesh/nut/convex_198.stl" name="nut_convex198" />
+        <mesh file="../mesh/nut/convex_199.stl" name="nut_convex199" />
+        <mesh file="../mesh/nut/convex_200.stl" name="nut_convex200" />
+        <mesh file="../mesh/nut/convex_201.stl" name="nut_convex201" />
+        <mesh file="../mesh/nut/convex_202.stl" name="nut_convex202" />
+        <mesh file="../mesh/nut/convex_203.stl" name="nut_convex203" />
+        <mesh file="../mesh/nut/convex_204.stl" name="nut_convex204" />
+        <mesh file="../mesh/nut/convex_205.stl" name="nut_convex205" />
+        <mesh file="../mesh/nut/convex_206.stl" name="nut_convex206" />
+        <mesh file="../mesh/nut/convex_207.stl" name="nut_convex207" />
+        <mesh file="../mesh/nut/convex_208.stl" name="nut_convex208" />
+        <mesh file="../mesh/nut/convex_209.stl" name="nut_convex209" />
+        <mesh file="../mesh/nut/convex_210.stl" name="nut_convex210" />
+        <mesh file="../mesh/nut/convex_211.stl" name="nut_convex211" />
+        <mesh file="../mesh/nut/convex_212.stl" name="nut_convex212" />
+        <mesh file="../mesh/nut/convex_213.stl" name="nut_convex213" />
+        <mesh file="../mesh/nut/convex_214.stl" name="nut_convex214" />
+        <mesh file="../mesh/nut/convex_215.stl" name="nut_convex215" />
+        <mesh file="../mesh/nut/convex_216.stl" name="nut_convex216" />
+        <mesh file="../mesh/nut/convex_217.stl" name="nut_convex217" />
 
         <material name="mat_screw" rgba="0.8 0.2 0.2 1"/>
         <material name="mat_nut" rgba="0.2 0.2 0.8 1"/>
@@ -197,6 +285,7 @@
             <geom type="mesh" density="1000" condim="1" mesh="convex17" material="mat_screw"/>
             <geom type="mesh" density="1000" condim="1" mesh="convex18" material="mat_screw"/>
         </body>
+
         <body name="mesh_nut" pos="0 0 5" euler="90 0 0">
             <geom type="mesh" condim="1" mesh="nut_convex0" material="mat_nut"/>
             <geom type="mesh" condim="1" mesh="nut_convex1" material="mat_nut"/>
@@ -328,7 +417,96 @@
             <geom type="mesh" condim="1" mesh="nut_convex127" material="mat_nut"/>
             <geom type="mesh" condim="1" mesh="nut_convex128" material="mat_nut"/>
             <geom type="mesh" condim="1" mesh="nut_convex129" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex130" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex131" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex132" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex133" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex134" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex135" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex136" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex137" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex138" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex139" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex140" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex141" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex142" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex143" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex144" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex145" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex146" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex147" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex148" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex149" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex150" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex151" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex152" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex153" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex154" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex155" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex156" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex157" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex158" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex159" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex160" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex161" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex162" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex163" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex164" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex165" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex166" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex167" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex168" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex169" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex170" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex171" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex172" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex173" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex174" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex175" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex176" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex177" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex178" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex179" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex180" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex181" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex182" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex183" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex184" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex185" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex186" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex187" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex188" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex189" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex190" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex191" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex192" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex193" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex194" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex195" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex196" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex197" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex198" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex199" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex200" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex201" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex202" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex203" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex204" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex205" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex206" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex207" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex208" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex209" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex210" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex211" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex212" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex213" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex214" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex215" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex216" material="mat_nut"/>
+            <geom type="mesh" condim="1" mesh="nut_convex217" material="mat_nut"/>
         </body>
+
 
     </worldbody>
 </mujoco>
