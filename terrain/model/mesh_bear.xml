@@ -1,0 +1,308 @@
+<mujoco>
+    <extension>
+        <plugin plugin="mujoco.elasticity.shell"/>
+    </extension>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+        <mesh file="../mesh/bear/convex_0.obj" name="convex0"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_1.obj" name="convex1"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_2.obj" name="convex2"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_3.obj" name="convex3"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_4.obj" name="convex4"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_5.obj" name="convex5"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_6.obj" name="convex6"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_7.obj" name="convex7"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_8.obj" name="convex8"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_9.obj" name="convex9"     scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_10.obj" name="convex10"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_11.obj" name="convex11"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_12.obj" name="convex12"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_13.obj" name="convex13"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_14.obj" name="convex14"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_15.obj" name="convex15"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_16.obj" name="convex16"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_17.obj" name="convex17"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_18.obj" name="convex18"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_19.obj" name="convex19"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_20.obj" name="convex20"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_21.obj" name="convex21"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_22.obj" name="convex22"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_23.obj" name="convex23"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_24.obj" name="convex24"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_25.obj" name="convex25"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_26.obj" name="convex26"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_27.obj" name="convex27"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_28.obj" name="convex28"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_29.obj" name="convex29"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_30.obj" name="convex30"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_31.obj" name="convex31"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_32.obj" name="convex32"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_33.obj" name="convex33"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_34.obj" name="convex34"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_35.obj" name="convex35"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_36.obj" name="convex36"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_37.obj" name="convex37"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_38.obj" name="convex38"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_39.obj" name="convex39"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_40.obj" name="convex40"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_41.obj" name="convex41"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_42.obj" name="convex42"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_43.obj" name="convex43"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_44.obj" name="convex44"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_45.obj" name="convex45"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_46.obj" name="convex46"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_47.obj" name="convex47"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_48.obj" name="convex48"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_49.obj" name="convex49"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_50.obj" name="convex50"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_51.obj" name="convex51"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_52.obj" name="convex52"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_53.obj" name="convex53"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_54.obj" name="convex54"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_55.obj" name="convex55"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_56.obj" name="convex56"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_57.obj" name="convex57"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_58.obj" name="convex58"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_59.obj" name="convex59"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_60.obj" name="convex60"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_61.obj" name="convex61"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_62.obj" name="convex62"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_63.obj" name="convex63"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_64.obj" name="convex64"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_65.obj" name="convex65"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_66.obj" name="convex66"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_67.obj" name="convex67"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_68.obj" name="convex68"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_69.obj" name="convex69"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_70.obj" name="convex70"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_71.obj" name="convex71"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_72.obj" name="convex72"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_73.obj" name="convex73"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_74.obj" name="convex74"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_75.obj" name="convex75"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_76.obj" name="convex76"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_77.obj" name="convex77"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_78.obj" name="convex78"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_79.obj" name="convex79"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_80.obj" name="convex80"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_81.obj" name="convex81"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_82.obj" name="convex82"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_83.obj" name="convex83"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_84.obj" name="convex84"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_85.obj" name="convex85"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_86.obj" name="convex86"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_87.obj" name="convex87"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_88.obj" name="convex88"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_89.obj" name="convex89"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_90.obj" name="convex90"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_91.obj" name="convex91"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_92.obj" name="convex92"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_93.obj" name="convex93"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_94.obj" name="convex94"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_95.obj" name="convex95"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_96.obj" name="convex96"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_97.obj" name="convex97"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_98.obj" name="convex98"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_99.obj" name="convex99"   scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_100.obj" name="convex100" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_101.obj" name="convex101" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_102.obj" name="convex102" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_103.obj" name="convex103" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_104.obj" name="convex104" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_105.obj" name="convex105" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_106.obj" name="convex106" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_107.obj" name="convex107" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_108.obj" name="convex108" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_109.obj" name="convex109" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_110.obj" name="convex110" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_111.obj" name="convex111" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_112.obj" name="convex112" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_113.obj" name="convex113" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_114.obj" name="convex114" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_115.obj" name="convex115" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_116.obj" name="convex116" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_117.obj" name="convex117" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_118.obj" name="convex118" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_119.obj" name="convex119" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_120.obj" name="convex120" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_121.obj" name="convex121" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_122.obj" name="convex122" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_123.obj" name="convex123" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_124.obj" name="convex124" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_125.obj" name="convex125" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_126.obj" name="convex126" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_127.obj" name="convex127" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_128.obj" name="convex128" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_129.obj" name="convex129" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_130.obj" name="convex130" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_131.obj" name="convex131" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_132.obj" name="convex132" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_133.obj" name="convex133" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_134.obj" name="convex134" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_135.obj" name="convex135" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_136.obj" name="convex136" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_137.obj" name="convex137" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_138.obj" name="convex138" scale="10 10 10"/>
+        <mesh file="../mesh/bear/convex_139.obj" name="convex139" scale="10 10 10"/>
+        <material name="mat_bear" rgba="0.8 0.8 0.8 1"/>
+    </asset>
+    <worldbody>
+        <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
+        <geom name="floor" type="plane" size="0 0 .1"/>
+        <body name="mesh_bear" pos="0 0 5" euler="90 0 0">
+            <geom type="mesh" mesh="convex0" material="mat_bear"/>
+            <geom type="mesh" mesh="convex1" material="mat_bear"/>
+            <geom type="mesh" mesh="convex2" material="mat_bear"/>
+            <geom type="mesh" mesh="convex3" material="mat_bear"/>
+            <geom type="mesh" mesh="convex4" material="mat_bear"/>
+            <geom type="mesh" mesh="convex5" material="mat_bear"/>
+            <geom type="mesh" mesh="convex6" material="mat_bear"/>
+            <geom type="mesh" mesh="convex7" material="mat_bear"/>
+            <geom type="mesh" mesh="convex8" material="mat_bear"/>
+            <geom type="mesh" mesh="convex9" material="mat_bear"/>
+            <geom type="mesh" mesh="convex10" material="mat_bear"/>
+            <geom type="mesh" mesh="convex11" material="mat_bear"/>
+            <geom type="mesh" mesh="convex12" material="mat_bear"/>
+            <geom type="mesh" mesh="convex13" material="mat_bear"/>
+            <geom type="mesh" mesh="convex14" material="mat_bear"/>
+            <geom type="mesh" mesh="convex15" material="mat_bear"/>
+            <geom type="mesh" mesh="convex16" material="mat_bear"/>
+            <geom type="mesh" mesh="convex17" material="mat_bear"/>
+            <geom type="mesh" mesh="convex18" material="mat_bear"/>
+            <geom type="mesh" mesh="convex19" material="mat_bear"/>
+            <geom type="mesh" mesh="convex20" material="mat_bear"/>
+            <geom type="mesh" mesh="convex21" material="mat_bear"/>
+            <geom type="mesh" mesh="convex22" material="mat_bear"/>
+            <geom type="mesh" mesh="convex23" material="mat_bear"/>
+            <geom type="mesh" mesh="convex24" material="mat_bear"/>
+            <geom type="mesh" mesh="convex25" material="mat_bear"/>
+            <geom type="mesh" mesh="convex26" material="mat_bear"/>
+            <geom type="mesh" mesh="convex27" material="mat_bear"/>
+            <geom type="mesh" mesh="convex28" material="mat_bear"/>
+            <geom type="mesh" mesh="convex29" material="mat_bear"/>
+            <geom type="mesh" mesh="convex30" material="mat_bear"/>
+            <geom type="mesh" mesh="convex31" material="mat_bear"/>
+            <geom type="mesh" mesh="convex32" material="mat_bear"/>
+            <geom type="mesh" mesh="convex33" material="mat_bear"/>
+            <geom type="mesh" mesh="convex34" material="mat_bear"/>
+            <geom type="mesh" mesh="convex35" material="mat_bear"/>
+            <geom type="mesh" mesh="convex36" material="mat_bear"/>
+            <geom type="mesh" mesh="convex37" material="mat_bear"/>
+            <geom type="mesh" mesh="convex38" material="mat_bear"/>
+            <geom type="mesh" mesh="convex39" material="mat_bear"/>
+            <geom type="mesh" mesh="convex40" material="mat_bear"/>
+            <geom type="mesh" mesh="convex41" material="mat_bear"/>
+            <geom type="mesh" mesh="convex42" material="mat_bear"/>
+            <geom type="mesh" mesh="convex43" material="mat_bear"/>
+            <geom type="mesh" mesh="convex44" material="mat_bear"/>
+            <geom type="mesh" mesh="convex45" material="mat_bear"/>
+            <geom type="mesh" mesh="convex46" material="mat_bear"/>
+            <geom type="mesh" mesh="convex47" material="mat_bear"/>
+            <geom type="mesh" mesh="convex48" material="mat_bear"/>
+            <geom type="mesh" mesh="convex49" material="mat_bear"/>
+            <geom type="mesh" mesh="convex50" material="mat_bear"/>
+            <geom type="mesh" mesh="convex51" material="mat_bear"/>
+            <geom type="mesh" mesh="convex52" material="mat_bear"/>
+            <geom type="mesh" mesh="convex53" material="mat_bear"/>
+            <geom type="mesh" mesh="convex54" material="mat_bear"/>
+            <geom type="mesh" mesh="convex55" material="mat_bear"/>
+            <geom type="mesh" mesh="convex56" material="mat_bear"/>
+            <geom type="mesh" mesh="convex57" material="mat_bear"/>
+            <geom type="mesh" mesh="convex58" material="mat_bear"/>
+            <geom type="mesh" mesh="convex59" material="mat_bear"/>
+            <geom type="mesh" mesh="convex60" material="mat_bear"/>
+            <geom type="mesh" mesh="convex61" material="mat_bear"/>
+            <geom type="mesh" mesh="convex62" material="mat_bear"/>
+            <geom type="mesh" mesh="convex63" material="mat_bear"/>
+            <geom type="mesh" mesh="convex64" material="mat_bear"/>
+            <geom type="mesh" mesh="convex65" material="mat_bear"/>
+            <geom type="mesh" mesh="convex66" material="mat_bear"/>
+            <geom type="mesh" mesh="convex67" material="mat_bear"/>
+            <geom type="mesh" mesh="convex68" material="mat_bear"/>
+            <geom type="mesh" mesh="convex69" material="mat_bear"/>
+            <geom type="mesh" mesh="convex70" material="mat_bear"/>
+            <geom type="mesh" mesh="convex71" material="mat_bear"/>
+            <geom type="mesh" mesh="convex72" material="mat_bear"/>
+            <geom type="mesh" mesh="convex73" material="mat_bear"/>
+            <geom type="mesh" mesh="convex74" material="mat_bear"/>
+            <geom type="mesh" mesh="convex75" material="mat_bear"/>
+            <geom type="mesh" mesh="convex76" material="mat_bear"/>
+            <geom type="mesh" mesh="convex77" material="mat_bear"/>
+            <geom type="mesh" mesh="convex78" material="mat_bear"/>
+            <geom type="mesh" mesh="convex79" material="mat_bear"/>
+            <geom type="mesh" mesh="convex80" material="mat_bear"/>
+            <geom type="mesh" mesh="convex81" material="mat_bear"/>
+            <geom type="mesh" mesh="convex82" material="mat_bear"/>
+            <geom type="mesh" mesh="convex83" material="mat_bear"/>
+            <geom type="mesh" mesh="convex84" material="mat_bear"/>
+            <geom type="mesh" mesh="convex85" material="mat_bear"/>
+            <geom type="mesh" mesh="convex86" material="mat_bear"/>
+            <geom type="mesh" mesh="convex87" material="mat_bear"/>
+            <geom type="mesh" mesh="convex88" material="mat_bear"/>
+            <geom type="mesh" mesh="convex89" material="mat_bear"/>
+            <geom type="mesh" mesh="convex90" material="mat_bear"/>
+            <geom type="mesh" mesh="convex91" material="mat_bear"/>
+            <geom type="mesh" mesh="convex92" material="mat_bear"/>
+            <geom type="mesh" mesh="convex93" material="mat_bear"/>
+            <geom type="mesh" mesh="convex94" material="mat_bear"/>
+            <geom type="mesh" mesh="convex95" material="mat_bear"/>
+            <geom type="mesh" mesh="convex96" material="mat_bear"/>
+            <geom type="mesh" mesh="convex97" material="mat_bear"/>
+            <geom type="mesh" mesh="convex98" material="mat_bear"/>
+            <geom type="mesh" mesh="convex99" material="mat_bear"/>
+            <geom type="mesh" mesh="convex100" material="mat_bear"/>
+            <geom type="mesh" mesh="convex101" material="mat_bear"/>
+            <geom type="mesh" mesh="convex102" material="mat_bear"/>
+            <geom type="mesh" mesh="convex103" material="mat_bear"/>
+            <geom type="mesh" mesh="convex104" material="mat_bear"/>
+            <geom type="mesh" mesh="convex105" material="mat_bear"/>
+            <geom type="mesh" mesh="convex106" material="mat_bear"/>
+            <geom type="mesh" mesh="convex107" material="mat_bear"/>
+            <geom type="mesh" mesh="convex108" material="mat_bear"/>
+            <geom type="mesh" mesh="convex109" material="mat_bear"/>
+            <geom type="mesh" mesh="convex110" material="mat_bear"/>
+            <geom type="mesh" mesh="convex111" material="mat_bear"/>
+            <geom type="mesh" mesh="convex112" material="mat_bear"/>
+            <geom type="mesh" mesh="convex113" material="mat_bear"/>
+            <geom type="mesh" mesh="convex114" material="mat_bear"/>
+            <geom type="mesh" mesh="convex115" material="mat_bear"/>
+            <geom type="mesh" mesh="convex116" material="mat_bear"/>
+            <geom type="mesh" mesh="convex117" material="mat_bear"/>
+            <geom type="mesh" mesh="convex118" material="mat_bear"/>
+            <geom type="mesh" mesh="convex119" material="mat_bear"/>
+            <geom type="mesh" mesh="convex120" material="mat_bear"/>
+            <geom type="mesh" mesh="convex121" material="mat_bear"/>
+            <geom type="mesh" mesh="convex122" material="mat_bear"/>
+            <geom type="mesh" mesh="convex123" material="mat_bear"/>
+            <geom type="mesh" mesh="convex124" material="mat_bear"/>
+            <geom type="mesh" mesh="convex125" material="mat_bear"/>
+            <geom type="mesh" mesh="convex126" material="mat_bear"/>
+            <geom type="mesh" mesh="convex127" material="mat_bear"/>
+            <geom type="mesh" mesh="convex128" material="mat_bear"/>
+            <geom type="mesh" mesh="convex129" material="mat_bear"/>
+            <geom type="mesh" mesh="convex130" material="mat_bear"/>
+            <geom type="mesh" mesh="convex131" material="mat_bear"/>
+            <geom type="mesh" mesh="convex132" material="mat_bear"/>
+            <geom type="mesh" mesh="convex133" material="mat_bear"/>
+            <geom type="mesh" mesh="convex134" material="mat_bear"/>
+            <geom type="mesh" mesh="convex135" material="mat_bear"/>
+            <geom type="mesh" mesh="convex136" material="mat_bear"/>
+            <geom type="mesh" mesh="convex137" material="mat_bear"/>
+            <geom type="mesh" mesh="convex138" material="mat_bear"/>
+            <geom type="mesh" mesh="convex139" material="mat_bear"/>
+        </body>
+        <body pos="1.5 0.0 25" euler="0 0 45">
+            <composite type="particle" count="9 19 1" spacing="0.5" flatinertia="0.01">
+                <skin texcoord="true" inflate="0.005" subgrid="4"/>
+                <geom type="ellipsoid" size="0.25 0.1 0.25" rgba=".8 .2 .1 1" group="4"/>
+                <plugin plugin="mujoco.elasticity.shell">
+                <config key="poisson" value="0"/>
+                <config key="thickness" value="1e-2"/>
+                <!--Units are in Pa (SI)-->
+                <config key="young" value="3e6"/>
+                </plugin>
+            </composite>
+        </body>
+    </worldbody>
+</mujoco>
+ 
