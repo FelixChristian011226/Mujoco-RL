@@ -10,7 +10,7 @@
 
 
 
-### 二、gen_terrain使用说明
+### 二、gen_terrain_gui使用说明
 
 1. 由于我在WSL-Ubuntu上直接安装会报错，需要安装gtk依赖：
 
