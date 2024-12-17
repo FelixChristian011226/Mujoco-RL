@@ -1,0 +1,14 @@
+<mujoco>
+    <extension>
+        <plugin plugin="mujoco.elasticity.shell"/>
+    </extension>
+    <asset>
+        <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512"/>
+    </asset>
+    <worldbody>
+        <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true"/>
+        <geom name="floor" type="plane" size="0 0 .1"/>
+    </worldbody>
+</mujoco>
+ 
+ 
