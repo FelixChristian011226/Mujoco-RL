@@ -293,38 +293,31 @@ class XMLInsertionPage(wx.Panel):
             wx.MessageBox(str(e), "Error", wx.OK | wx.ICON_ERROR)
 
     def insert_to_xml(self, xml_file, input_folder, model_folder, obj_files, pos, euler, scale):
-        # 读取XML文件
+
         tree = ET.parse(xml_file)
         root = tree.getroot()
-
-        # 定义命名空间，如果你的XML中有namespace需要在这里定义，例如：{"mujoco": "http://www.mujoco.org"}
         namespaces = {}
 
-        # 定位 <asset> 和 <worldbody> 标签
         asset = root.find("asset", namespaces)
         worldbody = root.find("worldbody", namespaces)
 
         if asset is None or worldbody is None:
             raise ValueError("XML file does not contain <asset> or <worldbody> tags.")
 
-        # 计算相对路径
         base_path = os.path.dirname(xml_file)
         relative_folder_path = os.path.relpath(input_folder, base_path)
 
-        # 插入 Material
         material = ET.Element("material")
         material.set("name", f"mat_{model_folder}")
         material.set("rgba", "0.8 0.8 0.8 1")
-        asset.insert(0, material)  # 插入到<asset>标签前
+        asset.insert(0, material)
 
-        # 插入到 <asset> 中
         for i, file_name in enumerate(obj_files):
             mesh_line = ET.SubElement(asset, "mesh")
             mesh_line.set("file", f"{relative_folder_path}/{file_name}")
             mesh_line.set("name", f"{model_folder}_{i}")
             mesh_line.set("scale", scale)
 
-        # 插入到 <worldbody> 中
         body = ET.SubElement(worldbody, "body")
         body.set("name", f"mesh_{model_folder}")
         body.set("pos", pos)
@@ -336,10 +329,8 @@ class XMLInsertionPage(wx.Panel):
             geom.set("mesh", f"{model_folder}_{i}")
             geom.set("material", f"mat_{model_folder}")
 
-        # 格式化输出
         self.indent_xml(root)
 
-        # 保存修改后的XML文件
         tree.write(xml_file, encoding="utf-8", xml_declaration=True)
 
     def indent_xml(self, elem, level=0):
@@ -362,7 +353,6 @@ class MainFrame(wx.Frame):
         super().__init__(None, title="COACD Convex Decomposition Tool", size=(1000, 800))
         notebook = wx.Notebook(self)
 
-        # Add pages to the notebook
         convex_page = ConvexDecompositionPage(notebook)
         insert_page = XMLInsertionPage(notebook)
 
