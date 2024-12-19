@@ -1,0 +1,542 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mujoco>
+    <extension>
+        <plugin plugin="mujoco.elasticity.shell" />
+        </extension>
+    <asset>
+        <material name="mat_sofa" rgba="0.8 0.8 0.8 1" />
+        <material name="mat_cake" rgba="0.8 0.8 0.8 1" />
+        <material name="mat_bird" rgba="0.8 0.8 0.8 1" />
+        <material name="mat_chair" rgba="0.8 0.8 0.8 1" />
+        <material name="mat_desk" rgba="0.8 0.8 0.8 1" />
+        <texture type="skybox" builtin="gradient" rgb1=".3 .5 .7" rgb2="0 0 0" width="32" height="512" />
+        <mesh file="../mesh/desk/part_0.obj" name="desk_0" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_1.obj" name="desk_1" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_10.obj" name="desk_2" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_11.obj" name="desk_3" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_12.obj" name="desk_4" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_13.obj" name="desk_5" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_2.obj" name="desk_6" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_3.obj" name="desk_7" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_4.obj" name="desk_8" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_5.obj" name="desk_9" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_6.obj" name="desk_10" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_7.obj" name="desk_11" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_8.obj" name="desk_12" scale="1 1 1" />
+        <mesh file="../mesh/desk/part_9.obj" name="desk_13" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_0.obj" name="chair_0" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_1.obj" name="chair_1" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_10.obj" name="chair_2" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_11.obj" name="chair_3" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_12.obj" name="chair_4" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_13.obj" name="chair_5" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_14.obj" name="chair_6" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_15.obj" name="chair_7" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_16.obj" name="chair_8" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_17.obj" name="chair_9" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_18.obj" name="chair_10" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_19.obj" name="chair_11" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_2.obj" name="chair_12" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_20.obj" name="chair_13" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_21.obj" name="chair_14" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_22.obj" name="chair_15" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_23.obj" name="chair_16" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_24.obj" name="chair_17" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_25.obj" name="chair_18" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_26.obj" name="chair_19" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_27.obj" name="chair_20" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_28.obj" name="chair_21" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_29.obj" name="chair_22" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_3.obj" name="chair_23" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_30.obj" name="chair_24" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_31.obj" name="chair_25" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_32.obj" name="chair_26" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_33.obj" name="chair_27" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_34.obj" name="chair_28" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_35.obj" name="chair_29" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_36.obj" name="chair_30" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_37.obj" name="chair_31" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_38.obj" name="chair_32" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_39.obj" name="chair_33" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_4.obj" name="chair_34" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_40.obj" name="chair_35" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_41.obj" name="chair_36" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_42.obj" name="chair_37" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_43.obj" name="chair_38" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_44.obj" name="chair_39" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_45.obj" name="chair_40" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_46.obj" name="chair_41" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_47.obj" name="chair_42" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_48.obj" name="chair_43" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_49.obj" name="chair_44" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_5.obj" name="chair_45" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_50.obj" name="chair_46" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_51.obj" name="chair_47" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_52.obj" name="chair_48" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_53.obj" name="chair_49" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_6.obj" name="chair_50" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_7.obj" name="chair_51" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_8.obj" name="chair_52" scale="1 1 1" />
+        <mesh file="../mesh/chair/part_9.obj" name="chair_53" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_0.obj" name="bird_0" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_1.obj" name="bird_1" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_10.obj" name="bird_2" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_11.obj" name="bird_3" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_12.obj" name="bird_4" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_13.obj" name="bird_5" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_14.obj" name="bird_6" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_15.obj" name="bird_7" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_16.obj" name="bird_8" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_17.obj" name="bird_9" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_18.obj" name="bird_10" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_19.obj" name="bird_11" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_2.obj" name="bird_12" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_20.obj" name="bird_13" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_21.obj" name="bird_14" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_22.obj" name="bird_15" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_23.obj" name="bird_16" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_24.obj" name="bird_17" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_25.obj" name="bird_18" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_26.obj" name="bird_19" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_27.obj" name="bird_20" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_28.obj" name="bird_21" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_29.obj" name="bird_22" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_3.obj" name="bird_23" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_30.obj" name="bird_24" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_31.obj" name="bird_25" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_32.obj" name="bird_26" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_33.obj" name="bird_27" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_34.obj" name="bird_28" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_35.obj" name="bird_29" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_36.obj" name="bird_30" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_37.obj" name="bird_31" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_38.obj" name="bird_32" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_39.obj" name="bird_33" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_4.obj" name="bird_34" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_40.obj" name="bird_35" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_41.obj" name="bird_36" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_5.obj" name="bird_37" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_6.obj" name="bird_38" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_7.obj" name="bird_39" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_8.obj" name="bird_40" scale="1 1 1" />
+        <mesh file="../mesh/bird/part_9.obj" name="bird_41" scale="1 1 1" />
+        <mesh file="../mesh/cake/part_0.obj" name="cake_0" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_1.obj" name="cake_1" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_10.obj" name="cake_2" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_11.obj" name="cake_3" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_12.obj" name="cake_4" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_13.obj" name="cake_5" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_14.obj" name="cake_6" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_15.obj" name="cake_7" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_16.obj" name="cake_8" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_17.obj" name="cake_9" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_18.obj" name="cake_10" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_19.obj" name="cake_11" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_2.obj" name="cake_12" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_20.obj" name="cake_13" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_21.obj" name="cake_14" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_22.obj" name="cake_15" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_23.obj" name="cake_16" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_24.obj" name="cake_17" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_25.obj" name="cake_18" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_26.obj" name="cake_19" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_27.obj" name="cake_20" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_28.obj" name="cake_21" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_29.obj" name="cake_22" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_3.obj" name="cake_23" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_30.obj" name="cake_24" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_31.obj" name="cake_25" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_32.obj" name="cake_26" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_33.obj" name="cake_27" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_34.obj" name="cake_28" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_35.obj" name="cake_29" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_36.obj" name="cake_30" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_37.obj" name="cake_31" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_38.obj" name="cake_32" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_39.obj" name="cake_33" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_4.obj" name="cake_34" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_40.obj" name="cake_35" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_41.obj" name="cake_36" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_42.obj" name="cake_37" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_43.obj" name="cake_38" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_44.obj" name="cake_39" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_45.obj" name="cake_40" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_46.obj" name="cake_41" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_47.obj" name="cake_42" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_48.obj" name="cake_43" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_49.obj" name="cake_44" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_5.obj" name="cake_45" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_50.obj" name="cake_46" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_51.obj" name="cake_47" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_52.obj" name="cake_48" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_53.obj" name="cake_49" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_54.obj" name="cake_50" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_55.obj" name="cake_51" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_56.obj" name="cake_52" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_57.obj" name="cake_53" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_6.obj" name="cake_54" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_7.obj" name="cake_55" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_8.obj" name="cake_56" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/cake/part_9.obj" name="cake_57" scale="0.5 0.5 0.5" />
+        <mesh file="../mesh/sofa/part_0.obj" name="sofa_0" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_1.obj" name="sofa_1" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_10.obj" name="sofa_2" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_11.obj" name="sofa_3" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_12.obj" name="sofa_4" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_13.obj" name="sofa_5" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_14.obj" name="sofa_6" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_15.obj" name="sofa_7" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_16.obj" name="sofa_8" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_17.obj" name="sofa_9" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_18.obj" name="sofa_10" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_19.obj" name="sofa_11" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_2.obj" name="sofa_12" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_20.obj" name="sofa_13" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_21.obj" name="sofa_14" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_22.obj" name="sofa_15" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_23.obj" name="sofa_16" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_24.obj" name="sofa_17" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_25.obj" name="sofa_18" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_26.obj" name="sofa_19" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_27.obj" name="sofa_20" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_28.obj" name="sofa_21" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_29.obj" name="sofa_22" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_3.obj" name="sofa_23" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_30.obj" name="sofa_24" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_31.obj" name="sofa_25" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_32.obj" name="sofa_26" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_33.obj" name="sofa_27" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_34.obj" name="sofa_28" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_35.obj" name="sofa_29" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_36.obj" name="sofa_30" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_37.obj" name="sofa_31" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_38.obj" name="sofa_32" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_39.obj" name="sofa_33" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_4.obj" name="sofa_34" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_40.obj" name="sofa_35" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_41.obj" name="sofa_36" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_42.obj" name="sofa_37" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_43.obj" name="sofa_38" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_44.obj" name="sofa_39" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_45.obj" name="sofa_40" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_46.obj" name="sofa_41" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_47.obj" name="sofa_42" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_48.obj" name="sofa_43" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_49.obj" name="sofa_44" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_5.obj" name="sofa_45" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_50.obj" name="sofa_46" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_51.obj" name="sofa_47" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_52.obj" name="sofa_48" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_53.obj" name="sofa_49" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_54.obj" name="sofa_50" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_55.obj" name="sofa_51" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_56.obj" name="sofa_52" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_57.obj" name="sofa_53" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_58.obj" name="sofa_54" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_59.obj" name="sofa_55" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_6.obj" name="sofa_56" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_60.obj" name="sofa_57" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_61.obj" name="sofa_58" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_62.obj" name="sofa_59" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_63.obj" name="sofa_60" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_64.obj" name="sofa_61" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_65.obj" name="sofa_62" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_66.obj" name="sofa_63" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_67.obj" name="sofa_64" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_68.obj" name="sofa_65" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_69.obj" name="sofa_66" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_7.obj" name="sofa_67" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_70.obj" name="sofa_68" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_71.obj" name="sofa_69" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_72.obj" name="sofa_70" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_73.obj" name="sofa_71" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_74.obj" name="sofa_72" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_75.obj" name="sofa_73" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_76.obj" name="sofa_74" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_77.obj" name="sofa_75" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_78.obj" name="sofa_76" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_79.obj" name="sofa_77" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_8.obj" name="sofa_78" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_80.obj" name="sofa_79" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_81.obj" name="sofa_80" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_82.obj" name="sofa_81" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_83.obj" name="sofa_82" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_84.obj" name="sofa_83" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_85.obj" name="sofa_84" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_86.obj" name="sofa_85" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_87.obj" name="sofa_86" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_88.obj" name="sofa_87" scale="1 1 1" />
+        <mesh file="../mesh/sofa/part_9.obj" name="sofa_88" scale="1 1 1" />
+        </asset>
+    <worldbody>
+        <light name="sunlight" pos="0 0 10" dir="0 0 -1" diffuse="1 1 0.9" specular="0.1 0.1 0.1" directional="true" castshadow="true" />
+        <geom name="floor" type="plane" size="0 0 .1" />
+        <body name="mesh_desk" pos="0 0 0.6" euler="90 0 0">
+            <geom type="mesh" mesh="desk_0" material="mat_desk" />
+            <geom type="mesh" mesh="desk_1" material="mat_desk" />
+            <geom type="mesh" mesh="desk_2" material="mat_desk" />
+            <geom type="mesh" mesh="desk_3" material="mat_desk" />
+            <geom type="mesh" mesh="desk_4" material="mat_desk" />
+            <geom type="mesh" mesh="desk_5" material="mat_desk" />
+            <geom type="mesh" mesh="desk_6" material="mat_desk" />
+            <geom type="mesh" mesh="desk_7" material="mat_desk" />
+            <geom type="mesh" mesh="desk_8" material="mat_desk" />
+            <geom type="mesh" mesh="desk_9" material="mat_desk" />
+            <geom type="mesh" mesh="desk_10" material="mat_desk" />
+            <geom type="mesh" mesh="desk_11" material="mat_desk" />
+            <geom type="mesh" mesh="desk_12" material="mat_desk" />
+            <geom type="mesh" mesh="desk_13" material="mat_desk" />
+            </body>
+        <body name="mesh_chair" pos="2 0 1.0" euler="90 180 0">
+            <geom type="mesh" mesh="chair_0" material="mat_chair" />
+            <geom type="mesh" mesh="chair_1" material="mat_chair" />
+            <geom type="mesh" mesh="chair_2" material="mat_chair" />
+            <geom type="mesh" mesh="chair_3" material="mat_chair" />
+            <geom type="mesh" mesh="chair_4" material="mat_chair" />
+            <geom type="mesh" mesh="chair_5" material="mat_chair" />
+            <geom type="mesh" mesh="chair_6" material="mat_chair" />
+            <geom type="mesh" mesh="chair_7" material="mat_chair" />
+            <geom type="mesh" mesh="chair_8" material="mat_chair" />
+            <geom type="mesh" mesh="chair_9" material="mat_chair" />
+            <geom type="mesh" mesh="chair_10" material="mat_chair" />
+            <geom type="mesh" mesh="chair_11" material="mat_chair" />
+            <geom type="mesh" mesh="chair_12" material="mat_chair" />
+            <geom type="mesh" mesh="chair_13" material="mat_chair" />
+            <geom type="mesh" mesh="chair_14" material="mat_chair" />
+            <geom type="mesh" mesh="chair_15" material="mat_chair" />
+            <geom type="mesh" mesh="chair_16" material="mat_chair" />
+            <geom type="mesh" mesh="chair_17" material="mat_chair" />
+            <geom type="mesh" mesh="chair_18" material="mat_chair" />
+            <geom type="mesh" mesh="chair_19" material="mat_chair" />
+            <geom type="mesh" mesh="chair_20" material="mat_chair" />
+            <geom type="mesh" mesh="chair_21" material="mat_chair" />
+            <geom type="mesh" mesh="chair_22" material="mat_chair" />
+            <geom type="mesh" mesh="chair_23" material="mat_chair" />
+            <geom type="mesh" mesh="chair_24" material="mat_chair" />
+            <geom type="mesh" mesh="chair_25" material="mat_chair" />
+            <geom type="mesh" mesh="chair_26" material="mat_chair" />
+            <geom type="mesh" mesh="chair_27" material="mat_chair" />
+            <geom type="mesh" mesh="chair_28" material="mat_chair" />
+            <geom type="mesh" mesh="chair_29" material="mat_chair" />
+            <geom type="mesh" mesh="chair_30" material="mat_chair" />
+            <geom type="mesh" mesh="chair_31" material="mat_chair" />
+            <geom type="mesh" mesh="chair_32" material="mat_chair" />
+            <geom type="mesh" mesh="chair_33" material="mat_chair" />
+            <geom type="mesh" mesh="chair_34" material="mat_chair" />
+            <geom type="mesh" mesh="chair_35" material="mat_chair" />
+            <geom type="mesh" mesh="chair_36" material="mat_chair" />
+            <geom type="mesh" mesh="chair_37" material="mat_chair" />
+            <geom type="mesh" mesh="chair_38" material="mat_chair" />
+            <geom type="mesh" mesh="chair_39" material="mat_chair" />
+            <geom type="mesh" mesh="chair_40" material="mat_chair" />
+            <geom type="mesh" mesh="chair_41" material="mat_chair" />
+            <geom type="mesh" mesh="chair_42" material="mat_chair" />
+            <geom type="mesh" mesh="chair_43" material="mat_chair" />
+            <geom type="mesh" mesh="chair_44" material="mat_chair" />
+            <geom type="mesh" mesh="chair_45" material="mat_chair" />
+            <geom type="mesh" mesh="chair_46" material="mat_chair" />
+            <geom type="mesh" mesh="chair_47" material="mat_chair" />
+            <geom type="mesh" mesh="chair_48" material="mat_chair" />
+            <geom type="mesh" mesh="chair_49" material="mat_chair" />
+            <geom type="mesh" mesh="chair_50" material="mat_chair" />
+            <geom type="mesh" mesh="chair_51" material="mat_chair" />
+            <geom type="mesh" mesh="chair_52" material="mat_chair" />
+            <geom type="mesh" mesh="chair_53" material="mat_chair" />
+            </body>
+        <body name="mesh_bird" pos="0 2 1.0" euler="90 90 0">
+            <geom type="mesh" mesh="bird_0" material="mat_bird" />
+            <geom type="mesh" mesh="bird_1" material="mat_bird" />
+            <geom type="mesh" mesh="bird_2" material="mat_bird" />
+            <geom type="mesh" mesh="bird_3" material="mat_bird" />
+            <geom type="mesh" mesh="bird_4" material="mat_bird" />
+            <geom type="mesh" mesh="bird_5" material="mat_bird" />
+            <geom type="mesh" mesh="bird_6" material="mat_bird" />
+            <geom type="mesh" mesh="bird_7" material="mat_bird" />
+            <geom type="mesh" mesh="bird_8" material="mat_bird" />
+            <geom type="mesh" mesh="bird_9" material="mat_bird" />
+            <geom type="mesh" mesh="bird_10" material="mat_bird" />
+            <geom type="mesh" mesh="bird_11" material="mat_bird" />
+            <geom type="mesh" mesh="bird_12" material="mat_bird" />
+            <geom type="mesh" mesh="bird_13" material="mat_bird" />
+            <geom type="mesh" mesh="bird_14" material="mat_bird" />
+            <geom type="mesh" mesh="bird_15" material="mat_bird" />
+            <geom type="mesh" mesh="bird_16" material="mat_bird" />
+            <geom type="mesh" mesh="bird_17" material="mat_bird" />
+            <geom type="mesh" mesh="bird_18" material="mat_bird" />
+            <geom type="mesh" mesh="bird_19" material="mat_bird" />
+            <geom type="mesh" mesh="bird_20" material="mat_bird" />
+            <geom type="mesh" mesh="bird_21" material="mat_bird" />
+            <geom type="mesh" mesh="bird_22" material="mat_bird" />
+            <geom type="mesh" mesh="bird_23" material="mat_bird" />
+            <geom type="mesh" mesh="bird_24" material="mat_bird" />
+            <geom type="mesh" mesh="bird_25" material="mat_bird" />
+            <geom type="mesh" mesh="bird_26" material="mat_bird" />
+            <geom type="mesh" mesh="bird_27" material="mat_bird" />
+            <geom type="mesh" mesh="bird_28" material="mat_bird" />
+            <geom type="mesh" mesh="bird_29" material="mat_bird" />
+            <geom type="mesh" mesh="bird_30" material="mat_bird" />
+            <geom type="mesh" mesh="bird_31" material="mat_bird" />
+            <geom type="mesh" mesh="bird_32" material="mat_bird" />
+            <geom type="mesh" mesh="bird_33" material="mat_bird" />
+            <geom type="mesh" mesh="bird_34" material="mat_bird" />
+            <geom type="mesh" mesh="bird_35" material="mat_bird" />
+            <geom type="mesh" mesh="bird_36" material="mat_bird" />
+            <geom type="mesh" mesh="bird_37" material="mat_bird" />
+            <geom type="mesh" mesh="bird_38" material="mat_bird" />
+            <geom type="mesh" mesh="bird_39" material="mat_bird" />
+            <geom type="mesh" mesh="bird_40" material="mat_bird" />
+            <geom type="mesh" mesh="bird_41" material="mat_bird" />
+            </body>
+        <body name="mesh_cake" pos="0 0 1.6" euler="90 0 0">
+            <geom type="mesh" mesh="cake_0" material="mat_cake" />
+            <geom type="mesh" mesh="cake_1" material="mat_cake" />
+            <geom type="mesh" mesh="cake_2" material="mat_cake" />
+            <geom type="mesh" mesh="cake_3" material="mat_cake" />
+            <geom type="mesh" mesh="cake_4" material="mat_cake" />
+            <geom type="mesh" mesh="cake_5" material="mat_cake" />
+            <geom type="mesh" mesh="cake_6" material="mat_cake" />
+            <geom type="mesh" mesh="cake_7" material="mat_cake" />
+            <geom type="mesh" mesh="cake_8" material="mat_cake" />
+            <geom type="mesh" mesh="cake_9" material="mat_cake" />
+            <geom type="mesh" mesh="cake_10" material="mat_cake" />
+            <geom type="mesh" mesh="cake_11" material="mat_cake" />
+            <geom type="mesh" mesh="cake_12" material="mat_cake" />
+            <geom type="mesh" mesh="cake_13" material="mat_cake" />
+            <geom type="mesh" mesh="cake_14" material="mat_cake" />
+            <geom type="mesh" mesh="cake_15" material="mat_cake" />
+            <geom type="mesh" mesh="cake_16" material="mat_cake" />
+            <geom type="mesh" mesh="cake_17" material="mat_cake" />
+            <geom type="mesh" mesh="cake_18" material="mat_cake" />
+            <geom type="mesh" mesh="cake_19" material="mat_cake" />
+            <geom type="mesh" mesh="cake_20" material="mat_cake" />
+            <geom type="mesh" mesh="cake_21" material="mat_cake" />
+            <geom type="mesh" mesh="cake_22" material="mat_cake" />
+            <geom type="mesh" mesh="cake_23" material="mat_cake" />
+            <geom type="mesh" mesh="cake_24" material="mat_cake" />
+            <geom type="mesh" mesh="cake_25" material="mat_cake" />
+            <geom type="mesh" mesh="cake_26" material="mat_cake" />
+            <geom type="mesh" mesh="cake_27" material="mat_cake" />
+            <geom type="mesh" mesh="cake_28" material="mat_cake" />
+            <geom type="mesh" mesh="cake_29" material="mat_cake" />
+            <geom type="mesh" mesh="cake_30" material="mat_cake" />
+            <geom type="mesh" mesh="cake_31" material="mat_cake" />
+            <geom type="mesh" mesh="cake_32" material="mat_cake" />
+            <geom type="mesh" mesh="cake_33" material="mat_cake" />
+            <geom type="mesh" mesh="cake_34" material="mat_cake" />
+            <geom type="mesh" mesh="cake_35" material="mat_cake" />
+            <geom type="mesh" mesh="cake_36" material="mat_cake" />
+            <geom type="mesh" mesh="cake_37" material="mat_cake" />
+            <geom type="mesh" mesh="cake_38" material="mat_cake" />
+            <geom type="mesh" mesh="cake_39" material="mat_cake" />
+            <geom type="mesh" mesh="cake_40" material="mat_cake" />
+            <geom type="mesh" mesh="cake_41" material="mat_cake" />
+            <geom type="mesh" mesh="cake_42" material="mat_cake" />
+            <geom type="mesh" mesh="cake_43" material="mat_cake" />
+            <geom type="mesh" mesh="cake_44" material="mat_cake" />
+            <geom type="mesh" mesh="cake_45" material="mat_cake" />
+            <geom type="mesh" mesh="cake_46" material="mat_cake" />
+            <geom type="mesh" mesh="cake_47" material="mat_cake" />
+            <geom type="mesh" mesh="cake_48" material="mat_cake" />
+            <geom type="mesh" mesh="cake_49" material="mat_cake" />
+            <geom type="mesh" mesh="cake_50" material="mat_cake" />
+            <geom type="mesh" mesh="cake_51" material="mat_cake" />
+            <geom type="mesh" mesh="cake_52" material="mat_cake" />
+            <geom type="mesh" mesh="cake_53" material="mat_cake" />
+            <geom type="mesh" mesh="cake_54" material="mat_cake" />
+            <geom type="mesh" mesh="cake_55" material="mat_cake" />
+            <geom type="mesh" mesh="cake_56" material="mat_cake" />
+            <geom type="mesh" mesh="cake_57" material="mat_cake" />
+            </body>
+        <body name="mesh_sofa" pos="-2 0 1.0" euler="90 270 0">
+            <geom type="mesh" mesh="sofa_0" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_1" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_2" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_3" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_4" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_5" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_6" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_7" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_8" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_9" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_10" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_11" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_12" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_13" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_14" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_15" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_16" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_17" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_18" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_19" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_20" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_21" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_22" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_23" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_24" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_25" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_26" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_27" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_28" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_29" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_30" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_31" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_32" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_33" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_34" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_35" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_36" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_37" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_38" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_39" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_40" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_41" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_42" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_43" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_44" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_45" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_46" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_47" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_48" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_49" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_50" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_51" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_52" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_53" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_54" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_55" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_56" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_57" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_58" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_59" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_60" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_61" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_62" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_63" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_64" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_65" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_66" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_67" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_68" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_69" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_70" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_71" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_72" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_73" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_74" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_75" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_76" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_77" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_78" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_79" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_80" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_81" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_82" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_83" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_84" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_85" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_86" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_87" material="mat_sofa" />
+            <geom type="mesh" mesh="sofa_88" material="mat_sofa" />
+            </body>
+        </worldbody>
+    </mujoco>
