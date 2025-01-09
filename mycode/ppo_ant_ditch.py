@@ -58,10 +58,10 @@ if __name__ == "__main__":
 
     # model = train('Ant-v4', total_timesteps=1000000, model_save_path="./models/ppo_ant")
     # model = train('Ant-v4', total_timesteps=1000000, model_save_path="./models/ppo_ant_stairs")
-    model = train('Ant-v4', total_timesteps=1000000, model_save_path="./models/ppo_ant_ditch")
+    model = train('Ant-v5', total_timesteps=1000000, model_save_path="./models/ppo_ant_ditch")
 
     # model = PPO.load("./models/ppo_ant_ditch")
 
-    test('Ant-v4' ,model, num_steps=1000)
+    test('Ant-v5' ,model, num_steps=1000)
 
     # evaluate('Ant-v4', model, num_episodes=5)
