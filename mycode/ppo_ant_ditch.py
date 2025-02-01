@@ -6,7 +6,8 @@ def train(env_name, total_timesteps=1000000, model_save_path="./models/ppo_ant")
     # env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/mycode/ant.xml", render_mode="human")
     env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
 
-    model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./ppo_ant_tensorboard/")
+    # model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./ppo_ant_tensorboard/")
+    model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./tensorboard/ppo_ant_ditch")
 
     model.learn(total_timesteps=total_timesteps)
 
