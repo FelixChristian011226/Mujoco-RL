@@ -4,10 +4,10 @@ from stable_baselines3 import PPO
 def train(env_name, total_timesteps=1000000, model_save_path="./models/ppo_ant"):
     # env = gym.make(env_name, render_mode="human")
     # env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/mycode/ant.xml", render_mode="human")
-    env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
+    env = gym.make(env_name, xml_file="~/code/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
 
     # model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./ppo_ant_tensorboard/")
-    model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./tensorboard/ppo_ant_ditch")
+    model = PPO("MlpPolicy", env, verbose=1, tensorboard_log="./tensorboard/ppo_ant_ditch", device="cpu")
 
     model.learn(total_timesteps=total_timesteps)
 
@@ -19,7 +19,7 @@ def train(env_name, total_timesteps=1000000, model_save_path="./models/ppo_ant")
 def evaluate(env_name, model, num_episodes=10):
     # env = gym.make(env_name)
     # env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/mycode/ant.xml", render_mode="human")
-    env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
+    env = gym.make(env_name, xml_file="~/code/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
     total_rewards = []
 
     for episode in range(num_episodes):
@@ -43,7 +43,7 @@ def evaluate(env_name, model, num_episodes=10):
 def test(env_name, model, num_steps=1000):
     #env = gym.make(env_name, render_mode="human")
     # env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/mycode/ant.xml", render_mode="human")
-    env = gym.make(env_name, xml_file="~/coding/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
+    env = gym.make(env_name, xml_file="~/code/Mujoco-RL/terrain/model/ant_ditch.xml", render_mode="human")
     obs, info = env.reset()
 
     for i in range(num_steps):
@@ -59,9 +59,9 @@ if __name__ == "__main__":
 
     # model = train('Ant-v4', total_timesteps=1000000, model_save_path="./models/ppo_ant")
     # model = train('Ant-v4', total_timesteps=1000000, model_save_path="./models/ppo_ant_stairs")
-    model = train('Ant-v5', total_timesteps=1000000, model_save_path="./models/ppo_ant_ditch")
+    # model = train('Ant-v5', total_timesteps=1000000, model_save_path="./models/ppo_ant_ditch")
 
-    # model = PPO.load("./models/ppo_ant_ditch")
+    model = PPO.load("./models/ppo_ant_ditch")
 
     test('Ant-v5' ,model, num_steps=1000)
 
