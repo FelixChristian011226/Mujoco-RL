@@ -190,11 +190,6 @@ class ConvexDecompositionPage(wx.Panel):
         except Exception as e:
             wx.MessageBox(str(e), "Error", wx.OK | wx.ICON_ERROR)
 
-
-import os
-import xml.etree.ElementTree as ET
-import wx
-
 class XMLInsertionPage(wx.Panel):
     def __init__(self, parent):
         super().__init__(parent)
