@@ -11,7 +11,6 @@ def train(env_name, total_timesteps=100000, model_save_path="./models/model", lo
         Go1MujocoEnv,
     )
 
-    # model = PPO("MlpPolicy", env, verbose=1, tensorboard_log=log_save_path, device="cpu")
     model = SAC("MlpPolicy", env, verbose=1, tensorboard_log=log_save_path, device="cpu")
 
     model.learn(total_timesteps=total_timesteps)
@@ -63,9 +62,9 @@ def test(model_path, num_steps=1000):
 
 if __name__ == "__main__":
 
-    # model = train('Ant-v5', total_timesteps=100000, model_save_path="./models/go2_floor", log_save_path="tensorboard/go2_floor")
+    model = train('Ant-v5', total_timesteps=100000, model_save_path="./models/go1_floor", log_save_path="tensorboard/go1_floor")
 
-    test("./models/go2_floor", num_steps=1000)
+    # test("./models/go2_floor", num_steps=1000)
 
     # evaluate('Ant-v4', model, num_episodes=5)
     
