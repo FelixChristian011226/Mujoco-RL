@@ -5,7 +5,7 @@ from stable_baselines3.common.env_util import make_vec_env
 
 from go1_mujoco_env import Go1MujocoEnv
 
-def train(env_name, total_timesteps=100000, model_save_path="./models/model", log_save_path="./tensorboard/log"):
+def train(total_timesteps=100000, model_save_path="./models/model", log_save_path="./tensorboard/log"):
 
     env = make_vec_env(
         Go1MujocoEnv,
@@ -20,7 +20,7 @@ def train(env_name, total_timesteps=100000, model_save_path="./models/model", lo
 
     return model
 
-def evaluate(env_name, model, num_episodes=10):
+def evaluate(model, num_episodes=10):
     total_rewards = []
 
     for episode in range(num_episodes):
@@ -62,9 +62,9 @@ def test(model_path, num_steps=1000):
 
 if __name__ == "__main__":
 
-    model = train('Ant-v5', total_timesteps=100000, model_save_path="./models/go1_floor", log_save_path="tensorboard/go1_floor")
+    # model = train(total_timesteps=1000000, model_save_path="./models/go1_huashan_100w", log_save_path="tensorboard/go1_huashan_100w")
 
-    # test("./models/go2_floor", num_steps=1000)
+    test("./models/go1_huashan_100w", num_steps=1000)
 
-    # evaluate('Ant-v4', model, num_episodes=5)
+    # evaluate(model, num_episodes=5)
     

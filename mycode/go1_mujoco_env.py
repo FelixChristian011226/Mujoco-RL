@@ -33,7 +33,7 @@ class Go1MujocoEnv(MujocoEnv):
     def __init__(self, ctrl_type="position", **kwargs):
         # model_path = Path(f"./unitree_a1/a1_unitree.xml")
         # model_path = Path(f"./unitree_a1/unitree_a1_position.xml")
-        model_path = Path(f"./unitree_go1/scene_position.xml")
+        model_path = Path(f"./unitree_go1/huashan_position.xml")
         MujocoEnv.__init__(
             self,
             model_path=model_path.absolute().as_posix(),

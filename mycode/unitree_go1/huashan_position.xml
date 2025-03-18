@@ -1,0 +1,328 @@
+<mujoco model="go1">
+  <compiler angle="radian" meshdir="assets" autolimits="true" inertiafromgeom="false"/>
+
+  <option cone="elliptic" impratio="100"/>
+
+  <default>
+    <default class="go1">
+      <!-- <geom friction="0.6" margin="0.001" condim="1"/> -->
+      <joint axis="0 1 0" damping="1.0" armature="0.01" frictionloss="0.1"/>
+      <position kp="20" kv="1" forcerange="-23.7 23.7"/>
+      <default class="abduction">
+        <joint axis="1 0 0" range="-0.863 0.863"/>
+        <position ctrlrange="-0.863 0.863"/>
+      </default>
+      <default class="hip">
+        <joint range="-0.686 4.501"/>
+        <position ctrlrange="-0.686 4.501"/>
+      </default>
+      <default class="knee">
+        <joint range="-2.818 -0.888"/>
+        <position forcerange="-35.55 35.55" ctrlrange="-2.818 -0.888"/>
+      </default>
+      <default class="visual">
+        <geom type="mesh" contype="0" conaffinity="0" group="2" material="dark"/>
+      </default>
+      <default class="collision">
+        <geom group="3" type="capsule"/>
+        <default class="hip_left1">
+          <geom size="0.046 0.02" pos="0 0.045 0" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="hip_left2">
+          <geom size="0.031 0.02" pos="0 0.065 0" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="hip_left3">
+          <geom size="0.046 0.02" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="hip_right1">
+          <geom size="0.046 0.02" pos="0 -0.045 0" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="hip_right2">
+          <geom size="0.031 0.02" pos="0 -0.065 0" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="hip_right3">
+          <geom size="0.046 0.02" quat="1 1 0 0" type="cylinder"/>
+        </default>
+        <default class="thigh1">
+          <geom size="0.015" fromto="-0.02 0 0 -0.02 0 -0.16"/>
+        </default>
+        <default class="thigh2">
+          <geom size="0.015" fromto="0 0 0 -0.02 0 -0.1"/>
+        </default>
+        <default class="thigh3">
+          <geom size="0.015" fromto="-0.02 0 -0.16 0 0 -0.2"/>
+        </default>
+        <default class="calf1">
+          <geom size="0.01" fromto="0 0 0 0.02 0 -0.13"/>
+        </default>
+        <default class="calf2">
+          <geom size="0.01" fromto="0.02 0 -0.13 0 0 -0.2"/>
+        </default>
+        <default class="foot">
+          <!-- https://mujoco.readthedocs.io/en/stable/XMLreference.html#body-geom-friction:~:text=over%20the%20material.-,friction,-%3A%20real(3 -->
+          <geom type="sphere" size="0.023" pos="0 0 -0.213" priority="1" solimp="0.015 1 0.031" condim="6" friction="0.6 0.02 0.01"/>
+        </default>
+      </default>
+    </default>
+  </default>
+
+  <asset>
+    <!-- go1_position -->
+    <material name="dark" rgba="0.1 0.1 0.1 1"/>
+    <mesh class="go1" file="trunk.stl"/>
+    <mesh class="go1" file="hip.stl"/>
+    <mesh class="go1" file="thigh_mirror.stl"/>
+    <mesh class="go1" file="calf.stl"/>
+    <mesh class="go1" file="thigh.stl"/>
+
+    <!-- scene_position -->
+    <texture type="skybox" builtin="gradient" rgb1="0.3 0.5 0.7" rgb2="0 0 0" width="512" height="3072"/>
+    <texture type="2d" name="groundplane" builtin="checker" mark="edge" rgb1="0.2 0.3 0.4" rgb2="0.1 0.2 0.3"
+      markrgb="0.8 0.8 0.8" width="300" height="300"/>
+    <material name="groundplane" texture="groundplane" texuniform="true" texrepeat="5 5" reflectance="0.2"/>
+
+    <!-- huashan -->
+    <material name="mat_huashan" rgba="0.8 0.8 0.8 1" />
+    <mesh file="huashan/part_0.obj" name="huashan_0"   scale="10 10 5" />
+    <mesh file="huashan/part_1.obj" name="huashan_1"   scale="10 10 5" />
+    <mesh file="huashan/part_10.obj" name="huashan_2"  scale="10 10 5" />
+    <mesh file="huashan/part_11.obj" name="huashan_3"  scale="10 10 5" />
+    <mesh file="huashan/part_12.obj" name="huashan_4"  scale="10 10 5" />
+    <mesh file="huashan/part_13.obj" name="huashan_5"  scale="10 10 5" />
+    <mesh file="huashan/part_14.obj" name="huashan_6"  scale="10 10 5" />
+    <mesh file="huashan/part_15.obj" name="huashan_7"  scale="10 10 5" />
+    <mesh file="huashan/part_16.obj" name="huashan_8"  scale="10 10 5" />
+    <mesh file="huashan/part_17.obj" name="huashan_9"  scale="10 10 5" />
+    <mesh file="huashan/part_18.obj" name="huashan_10" scale="10 10 5" />
+    <mesh file="huashan/part_19.obj" name="huashan_11" scale="10 10 5" />
+    <mesh file="huashan/part_2.obj" name="huashan_12"  scale="10 10 5" />
+    <mesh file="huashan/part_20.obj" name="huashan_13" scale="10 10 5" />
+    <mesh file="huashan/part_21.obj" name="huashan_14" scale="10 10 5" />
+    <mesh file="huashan/part_22.obj" name="huashan_15" scale="10 10 5" />
+    <mesh file="huashan/part_23.obj" name="huashan_16" scale="10 10 5" />
+    <mesh file="huashan/part_24.obj" name="huashan_17" scale="10 10 5" />
+    <mesh file="huashan/part_25.obj" name="huashan_18" scale="10 10 5" />
+    <mesh file="huashan/part_26.obj" name="huashan_19" scale="10 10 5" />
+    <mesh file="huashan/part_27.obj" name="huashan_20" scale="10 10 5" />
+    <mesh file="huashan/part_28.obj" name="huashan_21" scale="10 10 5" />
+    <mesh file="huashan/part_29.obj" name="huashan_22" scale="10 10 5" />
+    <mesh file="huashan/part_3.obj" name="huashan_23"  scale="10 10 5" />
+    <mesh file="huashan/part_30.obj" name="huashan_24" scale="10 10 5" />
+    <mesh file="huashan/part_31.obj" name="huashan_25" scale="10 10 5" />
+    <mesh file="huashan/part_32.obj" name="huashan_26" scale="10 10 5" />
+    <mesh file="huashan/part_33.obj" name="huashan_27" scale="10 10 5" />
+    <mesh file="huashan/part_34.obj" name="huashan_28" scale="10 10 5" />
+    <mesh file="huashan/part_35.obj" name="huashan_29" scale="10 10 5" />
+    <mesh file="huashan/part_36.obj" name="huashan_30" scale="10 10 5" />
+    <mesh file="huashan/part_37.obj" name="huashan_31" scale="10 10 5" />
+    <mesh file="huashan/part_38.obj" name="huashan_32" scale="10 10 5" />
+    <mesh file="huashan/part_39.obj" name="huashan_33" scale="10 10 5" />
+    <mesh file="huashan/part_4.obj" name="huashan_34"  scale="10 10 5" />
+    <mesh file="huashan/part_40.obj" name="huashan_35" scale="10 10 5" />
+    <mesh file="huashan/part_41.obj" name="huashan_36" scale="10 10 5" />
+    <mesh file="huashan/part_42.obj" name="huashan_37" scale="10 10 5" />
+    <mesh file="huashan/part_5.obj" name="huashan_38"  scale="10 10 5" />
+    <mesh file="huashan/part_6.obj" name="huashan_39"  scale="10 10 5" />
+    <mesh file="huashan/part_7.obj" name="huashan_40"  scale="10 10 5" />
+    <mesh file="huashan/part_8.obj" name="huashan_41"  scale="10 10 5" />
+    <mesh file="huashan/part_9.obj" name="huashan_42"  scale="10 10 5" />
+
+  </asset>
+
+  <worldbody>
+    <!-- go1_position -->
+    <light name="spotlight" mode="targetbodycom" target="trunk" pos="0 -1 2"/>
+    <body name="trunk" pos="0 0 0.445" childclass="go1">
+      <camera name="tracking" mode="trackcom" pos="0 -1 0.8" xyaxes="1 0 0 0 1 1"/>
+      <site name="head" pos="0.3 0 0" rgba="1 0 0 1" size="0.02" group="5"/>
+      <inertial pos="0.0223 0.002 -0.0005" quat="-0.00342088 0.705204 0.000106698 0.708996" mass="5.204" diaginertia="0.0716565 0.0630105 0.0168101"/>
+      <freejoint/>
+      <geom class="visual" mesh="trunk"/>
+      <geom class="collision" size="0.125 0.04 0.057" type="box"/>
+      <geom class="collision" quat="1 0 1 0" pos="0 -0.04 0" size="0.058 0.125" type="cylinder"/>
+      <geom class="collision" quat="1 0 1 0" pos="0 +0.04 0" size="0.058 0.125" type="cylinder"/>
+      <geom class="collision" pos="0.25 0 0" size="0.005 0.06 0.05" type="box"/>
+      <geom class="collision" pos="0.25 0.06 -0.01" size="0.009 0.035"/>
+      <geom class="collision" pos="0.25 -0.06 -0.01" size="0.009 0.035"/>
+      <geom class="collision" pos="0.25 0 -0.05" size="0.01 0.06" quat="1 1 0 0"/>
+      <geom class="collision" pos="0.255 0 0.0355" size="0.021 0.052" quat="1 1 0 0"/>
+      <site name="imu" pos="0 0 0"/>
+      <body name="FR_hip" pos="0.1881 -0.04675 0">
+        <inertial pos="-0.0049166 0.00762615 -8.865e-05" quat="0.507341 0.514169 0.495027 0.482891" mass="0.68" diaginertia="0.000734064 0.000468438 0.000398719"/>
+        <joint class="abduction" name="FR_hip_joint"/>
+        <geom class="visual" mesh="hip" quat="1 0 0 0"/>
+        <geom class="hip_right1"/>
+        <geom class="hip_right2"/>
+        <body name="FR_thigh" pos="0 -0.08 0">
+          <inertial pos="-0.00304722 0.019315 -0.0305004" quat="0.65243 -0.0272313 0.0775126 0.753383" mass="1.009" diaginertia="0.00478717 0.00460903 0.000709268"/>
+          <joint class="hip" name="FR_thigh_joint"/>
+          <geom class="visual" mesh="thigh_mirror"/>
+          <geom class="thigh1"/>
+          <geom class="thigh2"/>
+          <geom class="thigh3"/>
+          <body name="FR_calf" pos="0 0 -0.213">
+            <inertial pos="0.00429862 0.000976676 -0.146197" quat="0.691246 0.00357467 0.00511118 0.722592" mass="0.195862" diaginertia="0.00149767 0.00148468 3.58427e-05"/>
+            <joint class="knee" name="FR_calf_joint"/>
+            <geom class="visual" mesh="calf"/>
+            <geom class="calf1"/>
+            <geom class="calf2"/>
+            <geom name="FR" class="foot"/>
+            <site name="FR" pos="0 0 -0.213" type="sphere" size="0.023" group="5"/>
+          </body>
+        </body>
+      </body>
+      <body name="FL_hip" pos="0.1881 0.04675 0">
+        <inertial pos="-0.0049166 -0.00762615 -8.865e-05" quat="0.482891 0.495027 0.514169 0.507341" mass="0.68" diaginertia="0.000734064 0.000468438 0.000398719"/>
+        <joint class="abduction" name="FL_hip_joint"/>
+        <geom class="visual" mesh="hip"/>
+        <geom class="hip_left1"/>
+        <geom class="hip_left2"/>
+        <body name="FL_thigh" pos="0 0.08 0">
+          <inertial pos="-0.00304722 -0.019315 -0.0305004" quat="0.753383 0.0775126 -0.0272313 0.65243" mass="1.009" diaginertia="0.00478717 0.00460903 0.000709268"/>
+          <joint class="hip" name="FL_thigh_joint"/>
+          <geom class="visual" mesh="thigh"/>
+          <geom class="thigh1"/>
+          <geom class="thigh2"/>
+          <geom class="thigh3"/>
+          <body name="FL_calf" pos="0 0 -0.213">
+            <inertial pos="0.00429862 0.000976676 -0.146197" quat="0.691246 0.00357467 0.00511118 0.722592" mass="0.195862" diaginertia="0.00149767 0.00148468 3.58427e-05"/>
+            <joint class="knee" name="FL_calf_joint"/>
+            <geom class="visual" mesh="calf"/>
+            <geom class="calf1"/>
+            <geom class="calf2"/>
+            <geom name="FL" class="foot"/>
+            <site name="FL" pos="0 0 -0.213" type="sphere" size="0.023" group="5"/>
+          </body>
+        </body>
+      </body>
+      <body name="RR_hip" pos="-0.1881 -0.04675 0">
+        <inertial pos="0.0049166 0.00762615 -8.865e-05" quat="0.495027 0.482891 0.507341 0.514169" mass="0.68" diaginertia="0.000734064 0.000468438 0.000398719"/>
+        <joint class="abduction" name="RR_hip_joint"/>
+        <geom class="visual" quat="0 0 0 -1" mesh="hip"/>
+        <geom class="hip_right1"/>
+        <geom class="hip_right2"/>
+        <geom class="hip_right3"/>
+        <body name="RR_thigh" pos="0 -0.08 0">
+          <inertial pos="-0.00304722 0.019315 -0.0305004" quat="0.65243 -0.0272313 0.0775126 0.753383" mass="1.009" diaginertia="0.00478717 0.00460903 0.000709268"/>
+          <joint class="hip" name="RR_thigh_joint"/>
+          <geom class="visual" mesh="thigh_mirror"/>
+          <geom class="thigh1"/>
+          <geom class="thigh2"/>
+          <geom class="thigh3"/>
+          <body name="RR_calf" pos="0 0 -0.213">
+            <inertial pos="0.00429862 0.000976676 -0.146197" quat="0.691246 0.00357467 0.00511118 0.722592" mass="0.195862" diaginertia="0.00149767 0.00148468 3.58427e-05"/>
+            <joint class="knee" name="RR_calf_joint"/>
+            <geom class="visual" mesh="calf"/>
+            <geom class="calf1"/>
+            <geom class="calf2"/>
+            <geom name="RR" class="foot"/>
+            <site name="RR" pos="0 0 -0.213" type="sphere" size="0.023" group="5"/>
+          </body>
+        </body>
+      </body>
+      <body name="RL_hip" pos="-0.1881 0.04675 0">
+        <inertial pos="0.0049166 -0.00762615 -8.865e-05" quat="0.514169 0.507341 0.482891 0.495027" mass="0.68" diaginertia="0.000734064 0.000468438 0.000398719"/>
+        <joint class="abduction" name="RL_hip_joint"/>
+        <geom class="visual" quat="0 0 1 0" mesh="hip"/>
+        <geom class="hip_left1"/>
+        <geom class="hip_left2"/>
+        <geom class="hip_left3"/>
+        <body name="RL_thigh" pos="0 0.08 0">
+          <inertial pos="-0.00304722 -0.019315 -0.0305004" quat="0.753383 0.0775126 -0.0272313 0.65243" mass="1.009" diaginertia="0.00478717 0.00460903 0.000709268"/>
+          <joint class="hip" name="RL_thigh_joint"/>
+          <geom class="visual" mesh="thigh"/>
+          <geom class="thigh1"/>
+          <geom class="thigh2"/>
+          <geom class="thigh3"/>
+          <body name="RL_calf" pos="0 0 -0.213">
+            <inertial pos="0.00429862 0.000976676 -0.146197" quat="0.691246 0.00357467 0.00511118 0.722592" mass="0.195862" diaginertia="0.00149767 0.00148468 3.58427e-05"/>
+            <joint class="knee" name="RL_calf_joint"/>
+            <geom class="visual" mesh="calf"/>
+            <geom class="calf1"/>
+            <geom class="calf2"/>
+            <geom name="RL" class="foot"/>
+            <site name="RL" pos="0 0 -0.213" type="sphere" size="0.023" group="5"/>
+          </body>
+        </body>
+      </body>
+    </body>
+    
+    <!-- scene_position -->
+    <light pos="0 0 1.5" dir="0 0 -1" directional="true"/>
+    <geom name="floor" size="0 0 0.05" type="plane" material="groundplane"/>
+
+    <!-- huashan -->
+        <body name="mesh_huashan" pos="6 -1 2.5" euler="0 0 1.5708">
+        <geom type="mesh" mesh="huashan_0" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_1" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_2" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_3" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_4" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_5" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_6" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_7" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_8" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_9" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_10" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_11" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_12" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_13" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_14" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_15" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_16" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_17" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_18" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_19" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_20" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_21" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_22" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_23" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_24" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_25" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_26" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_27" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_28" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_29" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_30" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_31" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_32" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_33" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_34" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_35" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_36" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_37" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_38" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_39" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_40" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_41" material="mat_huashan" />
+        <geom type="mesh" mesh="huashan_42" material="mat_huashan" />
+      </body>
+
+  </worldbody>
+
+  <actuator>
+    <position class="abduction" name="FR_hip" joint="FR_hip_joint"/>
+    <position class="hip" name="FR_thigh" joint="FR_thigh_joint"/>
+    <position class="knee" name="FR_calf" joint="FR_calf_joint"/>
+
+    <position class="abduction" name="FL_hip" joint="FL_hip_joint"/>
+    <position class="hip" name="FL_thigh" joint="FL_thigh_joint"/>
+    <position class="knee" name="FL_calf" joint="FL_calf_joint"/>
+
+    <position class="abduction" name="RR_hip" joint="RR_hip_joint"/>
+    <position class="hip" name="RR_thigh" joint="RR_thigh_joint"/>
+    <position class="knee" name="RR_calf" joint="RR_calf_joint"/>
+
+    <position class="abduction" name="RL_hip" joint="RL_hip_joint"/>
+    <position class="hip" name="RL_thigh" joint="RL_thigh_joint"/>
+    <position class="knee" name="RL_calf" joint="RL_calf_joint"/>
+  </actuator>
+
+  <keyframe>
+    <key name="home" qpos="0 0 0.35 1 0 0 0 0.0 0.8 -1.5 0.0 0.8 -1.5 0.0 1.0 -1.5 0.0 1.0 -1.5" ctrl="0.0 0.8 -1.5 0.0 0.8 -1.5 0.0 1.0 -1.5 0.0 1.0 -1.5"/>
+  </keyframe>
+
+  <!-- <keyframe>
+    <key name="home" qpos="0 0 0.42 1 0 0 0   -0.1 0.8 -1.2   0.1 0.8 -1.2   -0.1 1 -1.5   0.1 1 -1.5" ctrl="-0.1 0.8 -1.2   0.1 0.8 -1.2   -0.1 1 -1.5   0.1 1 -1.5"/>
+  </keyframe> -->
+</mujoco>
