@@ -1,4 +1,5 @@
 import gymnasium
+import time
 from stable_baselines3 import PPO
 from stable_baselines3 import SAC
 from stable_baselines3.common.env_util import make_vec_env
@@ -6,6 +7,8 @@ from stable_baselines3.common.env_util import make_vec_env
 from go1_mujoco_env import Go1MujocoEnv
 
 def train(total_timesteps=100000, model_save_path="./models/model", log_save_path="./tensorboard/log"):
+
+    start_time = time.time()
 
     env = make_vec_env(
         Go1MujocoEnv,
@@ -17,6 +20,12 @@ def train(total_timesteps=100000, model_save_path="./models/model", log_save_pat
 
     model.save(model_save_path)
     print(f"Model saved to {model_save_path}")
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    hours, rem = divmod(total_time, 3600)
+    minutes, seconds = divmod(rem, 60)
+    print(f"\nTraining completed in: {int(hours)}h {int(minutes)}m {int(seconds)}s")
 
     return model
 
@@ -62,9 +71,9 @@ def test(model_path, num_steps=1000):
 
 if __name__ == "__main__":
 
-    # model = train(total_timesteps=1000000, model_save_path="./models/go1_huashan_100w", log_save_path="tensorboard/go1_huashan_100w")
+    # model = train(total_timesteps=1000000, model_save_path="./models/go1_huashan_100w_fixed", log_save_path="tensorboard/go1_huashan_100w_fixed")
 
-    test("./models/go1_huashan_100w", num_steps=1000)
+    test("./models/go1_huashan_100w_fixed", num_steps=1000)
 
     # evaluate(model, num_episodes=5)
     

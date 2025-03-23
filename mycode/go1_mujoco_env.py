@@ -93,7 +93,7 @@ class Go1MujocoEnv(MujocoEnv):
         self._tracking_velocity_sigma = 0.25
 
         # Metrics used to determine if the episode should be terminated
-        self._healthy_z_range = (0.22, 0.65)
+        self._healthy_z_range = (0.22, 5.00) # (0.22, 0.65)
         self._healthy_pitch_range = (-np.deg2rad(10), np.deg2rad(10))
         self._healthy_roll_range = (-np.deg2rad(10), np.deg2rad(10))
 
