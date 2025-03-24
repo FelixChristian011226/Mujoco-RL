@@ -71,9 +71,9 @@ def test(model_path, num_steps=1000):
 
 if __name__ == "__main__":
 
-    # model = train(total_timesteps=1000000, model_save_path="./models/go1_huashan_100w_fixed", log_save_path="tensorboard/go1_huashan_100w_fixed")
+    # model = train(total_timesteps=2000000, model_save_path="./models/go1_huashan_200w", log_save_path="tensorboard/go1_huashan_200w")
 
-    test("./models/go1_huashan_100w_fixed", num_steps=1000)
+    test("./models/go1_huashan_200w", num_steps=1000)
 
     # evaluate(model, num_episodes=5)
     
