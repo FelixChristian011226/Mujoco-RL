@@ -12,6 +12,8 @@ def train(total_timesteps=100000, model_save_path="./models/model", log_save_pat
 
     env = make_vec_env(
         Go1MujocoEnv,
+        width=1920,
+        height=1080,
     )
 
     model = SAC("MlpPolicy", env, verbose=1, tensorboard_log=log_save_path, device="cpu")
@@ -54,6 +56,8 @@ def test(model_path, num_steps=1000):
 
     env = Go1MujocoEnv(
         render_mode="human",
+        width=1920,
+        height=1080,
     )
 
     model = SAC.load(path=model_path, env=env, verbose=1, device="cpu")
