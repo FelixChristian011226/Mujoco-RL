@@ -142,10 +142,10 @@
     <light diffuse=".4 .4 .4" specular="0.1 0.1 0.1" pos="0 0 2.0" dir="0 0 -1" castshadow="false"/>
     <light directional="true" diffuse=".8 .8 .8" specular="0.2 0.2 0.2" pos="0 0 4" dir="0 0 -1"/>
 
-    <!-- <geom name="ground" type="plane" size="0 0 1" pos="0 0 0" quat="1 0 0 0" material="matplane" condim="1"/> -->
+    <geom name="ground" type="plane" size="0 0 1" pos="0 0 0" quat="1 0 0 0" material="matplane" condim="1"/>
 
     <!-- Room -->
-    <body name="room" pos="0 0 48" euler="90 0 0">
+    <body name="room" pos="0 0 48" euler="1.5708 0 0">
       <geom type="mesh" mesh="mesh_cabinet(0.60).glb" material="mat_cabinet(0.60).glb" />
       <geom type="mesh" mesh="mesh_chairs(0.34).glb" material="mat_chairs(0.34).glb" />
       <geom type="mesh" mesh="mesh_chairs(0.35).glb" material="mat_chairs(0.35).glb" />
