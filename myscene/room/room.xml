@@ -18,91 +18,91 @@
     <!-- Room -->
     <texture type="2d" file="./models/cabinet(0.60).glb/Image_0.png" name="tex_cabinet(0.60).glb"/>
     <material name="mat_cabinet(0.60).glb" texture="tex_cabinet(0.60).glb"/>
-    <mesh file="./models/cabinet(0.60).glb/cabinet(0.60).glb.obj" name="mesh_cabinet(0.60).glb"/>
+    <mesh file="./models/cabinet(0.60).glb/cabinet(0.60).glb.obj" name="mesh_cabinet(0.60).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/chairs(0.34).glb/Image_2.png" name="tex_chairs(0.34).glb"/>
     <material name="mat_chairs(0.34).glb" texture="tex_chairs(0.34).glb"/>
-    <mesh file="./models/chairs(0.34).glb/chairs(0.34).glb.obj" name="mesh_chairs(0.34).glb"/>
+    <mesh file="./models/chairs(0.34).glb/chairs(0.34).glb.obj" name="mesh_chairs(0.34).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/chairs(0.35).glb/Image_3.png" name="tex_chairs(0.35).glb"/>
     <material name="mat_chairs(0.35).glb" texture="tex_chairs(0.35).glb"/>
-    <mesh file="./models/chairs(0.35).glb/chairs(0.35).glb.obj" name="mesh_chairs(0.35).glb"/>
+    <mesh file="./models/chairs(0.35).glb/chairs(0.35).glb.obj" name="mesh_chairs(0.35).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/chairs(0.41).glb/Image_4.png" name="tex_chairs(0.41).glb"/>
     <material name="mat_chairs(0.41).glb" texture="tex_chairs(0.41).glb"/>
-    <mesh file="./models/chairs(0.41).glb/chairs(0.41).glb.obj" name="mesh_chairs(0.41).glb"/>
+    <mesh file="./models/chairs(0.41).glb/chairs(0.41).glb.obj" name="mesh_chairs(0.41).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/chairs(0.49).glb/Image_6.png" name="tex_chairs(0.49).glb"/>
     <material name="mat_chairs(0.49).glb" texture="tex_chairs(0.49).glb"/>
-    <mesh file="./models/chairs(0.49).glb/chairs(0.49).glb.obj" name="mesh_chairs(0.49).glb"/>
+    <mesh file="./models/chairs(0.49).glb/chairs(0.49).glb.obj" name="mesh_chairs(0.49).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/chairs(0.57).glb/Image_8.png" name="tex_chairs(0.57).glb"/>
     <material name="mat_chairs(0.57).glb" texture="tex_chairs(0.57).glb"/>
-    <mesh file="./models/chairs(0.57).glb/chairs(0.57).glb.obj" name="mesh_chairs(0.57).glb"/>
+    <mesh file="./models/chairs(0.57).glb/chairs(0.57).glb.obj" name="mesh_chairs(0.57).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/dining table cabinet(0.40).glb/Image_12.png" name="tex_dining_table_cabinet(0.40).glb"/>
     <material name="mat_dining_table_cabinet(0.40).glb" texture="tex_dining_table_cabinet(0.40).glb"/>
-    <mesh file="./models/dining table cabinet(0.40).glb/dining table cabinet(0.40).glb.obj" name="mesh_dining_table_cabinet(0.40).glb"/>
+    <mesh file="./models/dining table cabinet(0.40).glb/dining table cabinet(0.40).glb.obj" name="mesh_dining_table_cabinet(0.40).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/dining table(0.39).glb/Image_13.png" name="tex_dining_table(0.39).glb"/>
     <material name="mat_dining_table(0.39).glb" texture="tex_dining_table(0.39).glb"/>
-    <mesh file="./models/dining table(0.39).glb/dining table(0.39).glb.obj" name="mesh_dining_table(0.39).glb"/>
+    <mesh file="./models/dining table(0.39).glb/dining table(0.39).glb.obj" name="mesh_dining_table(0.39).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/door(0.52).glb/Image_3.002.png" name="tex_door(0.52).glb"/>
     <material name="mat_door(0.52).glb" texture="tex_door(0.52).glb"/>
-    <mesh file="./models/door(0.52).glb/door(0.52).glb.obj" name="mesh_door(0.52).glb"/>
+    <mesh file="./models/door(0.52).glb/door(0.52).glb.obj" name="mesh_door(0.52).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/flowers(0.56).glb/Image_14.png" name="tex_flowers(0.56).glb"/>
     <material name="mat_flowers(0.56).glb" texture="tex_flowers(0.56).glb"/>
-    <mesh file="./models/flowers(0.56).glb/flowers(0.56).glb.obj" name="mesh_flowers(0.56).glb"/>
+    <mesh file="./models/flowers(0.56).glb/flowers(0.56).glb.obj" name="mesh_flowers(0.56).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/lamp(0.86).glb/Image_4.002.png" name="tex_lamp(0.86).glb"/>
     <material name="mat_lamp(0.86).glb" texture="tex_lamp(0.86).glb"/>
-    <mesh file="./models/lamp(0.86).glb/lamp(0.86).glb.obj" name="mesh_lamp(0.86).glb"/>
+    <mesh file="./models/lamp(0.86).glb/lamp(0.86).glb.obj" name="mesh_lamp(0.86).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/painting(0.71).glb/Image_5.002.png" name="tex_painting(0.71).glb"/>
     <material name="mat_painting(0.71).glb" texture="tex_painting(0.71).glb"/>
-    <mesh file="./models/painting(0.71).glb/painting(0.71).glb.obj" name="mesh_painting(0.71).glb"/>
+    <mesh file="./models/painting(0.71).glb/painting(0.71).glb.obj" name="mesh_painting(0.71).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plant(0.88).glb/Image_6.002.png" name="tex_plant(0.88).glb"/>
     <material name="mat_plant(0.88).glb" texture="tex_plant(0.88).glb"/>
-    <mesh file="./models/plant(0.88).glb/plant(0.88).glb.obj" name="mesh_plant(0.88).glb"/>
+    <mesh file="./models/plant(0.88).glb/plant(0.88).glb.obj" name="mesh_plant(0.88).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plates(0.38).glb/Image_15.png" name="tex_plates(0.38).glb"/>
     <material name="mat_plates(0.38).glb" texture="tex_plates(0.38).glb"/>
-    <mesh file="./models/plates(0.38).glb/plates(0.38).glb.obj" name="mesh_plates(0.38).glb"/>
+    <mesh file="./models/plates(0.38).glb/plates(0.38).glb.obj" name="mesh_plates(0.38).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plates(0.39).glb/Image_16.png" name="tex_plates(0.39).glb"/>
     <material name="mat_plates(0.39).glb" texture="tex_plates(0.39).glb"/>
-    <mesh file="./models/plates(0.39).glb/plates(0.39).glb.obj" name="mesh_plates(0.39).glb"/>
+    <mesh file="./models/plates(0.39).glb/plates(0.39).glb.obj" name="mesh_plates(0.39).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plates(0.39).glb.001/Image_16.001.png" name="tex_plates(0.39).glb.001"/>
     <material name="mat_plates(0.39).glb.001" texture="tex_plates(0.39).glb.001"/>
-    <mesh file="./models/plates(0.39).glb.001/plates(0.39).glb.001.obj" name="mesh_plates(0.39).glb.001"/>
+    <mesh file="./models/plates(0.39).glb.001/plates(0.39).glb.001.obj" name="mesh_plates(0.39).glb.001" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plates(0.45).glb/Image_17.png" name="tex_plates(0.45).glb"/>
     <material name="mat_plates(0.45).glb" texture="tex_plates(0.45).glb"/>
-    <mesh file="./models/plates(0.45).glb/plates(0.45).glb.obj" name="mesh_plates(0.45).glb"/>
+    <mesh file="./models/plates(0.45).glb/plates(0.45).glb.obj" name="mesh_plates(0.45).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/plates(0.45).glb.001/Image_17.001.png" name="tex_plates(0.45).glb.001"/>
     <material name="mat_plates(0.45).glb.001" texture="tex_plates(0.45).glb.001"/>
-    <mesh file="./models/plates(0.45).glb.001/plates(0.45).glb.001.obj" name="mesh_plates(0.45).glb.001"/>
+    <mesh file="./models/plates(0.45).glb.001/plates(0.45).glb.001.obj" name="mesh_plates(0.45).glb.001" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/seat(0.45).glb/Image_7.002.png" name="tex_seat(0.45).glb"/>
     <material name="mat_seat(0.45).glb" texture="tex_seat(0.45).glb"/>
-    <mesh file="./models/seat(0.45).glb/seat(0.45).glb.obj" name="mesh_seat(0.45).glb"/>
+    <mesh file="./models/seat(0.45).glb/seat(0.45).glb.obj" name="mesh_seat(0.45).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/sofa(0.87).glb/Image_8.002.png" name="tex_sofa(0.87).glb"/>
     <material name="mat_sofa(0.87).glb" texture="tex_sofa(0.87).glb"/>
-    <mesh file="./models/sofa(0.87).glb/sofa(0.87).glb.obj" name="mesh_sofa(0.87).glb"/>
+    <mesh file="./models/sofa(0.87).glb/sofa(0.87).glb.obj" name="mesh_sofa(0.87).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/table(0.33).glb/Image_9.002.png" name="tex_table(0.33).glb"/>
     <material name="mat_table(0.33).glb" texture="tex_table(0.33).glb"/>
-    <mesh file="./models/table(0.33).glb/table(0.33).glb.obj" name="mesh_table(0.33).glb"/>
+    <mesh file="./models/table(0.33).glb/table(0.33).glb.obj" name="mesh_table(0.33).glb" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/table(0.62).glb/Image_10.002.png" name="tex_table(0.62).glb"/>
     <material name="mat_table(0.62).glb" texture="tex_table(0.62).glb"/>
-    <mesh file="./models/table(0.62).glb/table(0.62).glb.obj" name="mesh_table(0.62).glb"/>
+    <mesh file="./models/table(0.62).glb/table(0.62).glb.obj" name="mesh_table(0.62).glb" scale="0.03 0.03 0.03"/>
 
     <!-- <texture type="2d" file="./models/wall/Image_18.png" name="tex_wall"/>
     <material name="mat_wall" texture="tex_wall"/>
@@ -110,31 +110,31 @@
 
     <texture type="2d" file="./models/floor/Image_18.png" name="tex_floor"/>
     <material name="mat_floor" texture="tex_floor"/>
-    <mesh file="./models/floor/floor.obj" name="mesh_floor"/>
+    <mesh file="./models/floor/floor.obj" name="mesh_floor" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.001/Image_18.png" name="tex_wall.001"/>
     <material name="mat_wall.001" texture="tex_wall.001"/>
-    <mesh file="./models/wall.001/wall.001.obj" name="mesh_wall.001"/>
+    <mesh file="./models/wall.001/wall.001.obj" name="mesh_wall.001" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.002/Image_18.png" name="tex_wall.002"/>
     <material name="mat_wall.002" texture="tex_wall.002"/>
-    <mesh file="./models/wall.002/wall.002.obj" name="mesh_wall.002"/>
+    <mesh file="./models/wall.002/wall.002.obj" name="mesh_wall.002" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.003/Image_18.png" name="tex_wall.003"/>
     <material name="mat_wall.003" texture="tex_wall.003"/>
-    <mesh file="./models/wall.003/wall.003.obj" name="mesh_wall.003"/>
+    <mesh file="./models/wall.003/wall.003.obj" name="mesh_wall.003" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.004/Image_18.png" name="tex_wall.004"/>
     <material name="mat_wall.004" texture="tex_wall.004"/>
-    <mesh file="./models/wall.004/wall.004.obj" name="mesh_wall.004"/>
+    <mesh file="./models/wall.004/wall.004.obj" name="mesh_wall.004" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.005/Image_18.png" name="tex_wall.005"/>
     <material name="mat_wall.005" texture="tex_wall.005"/>
-    <mesh file="./models/wall.005/wall.005.obj" name="mesh_wall.005"/>
+    <mesh file="./models/wall.005/wall.005.obj" name="mesh_wall.005" scale="0.03 0.03 0.03"/>
 
     <texture type="2d" file="./models/wall.006/Image_18.png" name="tex_wall.006"/>
     <material name="mat_wall.006" texture="tex_wall.006"/>
-    <mesh file="./models/wall.006/wall.006.obj" name="mesh_wall.006"/>
+    <mesh file="./models/wall.006/wall.006.obj" name="mesh_wall.006" scale="0.03 0.03 0.03"/>
 
   </asset>
 
@@ -145,7 +145,7 @@
     <geom name="ground" type="plane" size="0 0 1" pos="0 0 0" quat="1 0 0 0" material="matplane" condim="1"/>
 
     <!-- Room -->
-    <body name="room" pos="0 0 48" euler="1.5708 0 0">
+    <body name="room" pos="0 0 1.5" euler="1.5708 0 0">
       <geom type="mesh" mesh="mesh_cabinet(0.60).glb" material="mat_cabinet(0.60).glb" />
       <geom type="mesh" mesh="mesh_chairs(0.34).glb" material="mat_chairs(0.34).glb" />
       <geom type="mesh" mesh="mesh_chairs(0.35).glb" material="mat_chairs(0.35).glb" />
