@@ -13,6 +13,7 @@ from mujoco_playground._src.locomotion.go1.base import get_assets
 
 # —— 全局 GLFW 窗口指针 —— 
 _glfw_window = None
+speed = 0.4
 
 def on_key(key: int):
     """MuJoCo 被动 Viewer 回调：首次捕获 GLFW window"""
@@ -58,11 +59,13 @@ class KeyboardJoystick:
 
         # 前后速度：短按 -> vx_scale * dt, 长按 -> vx_scale
         if up_edge:
-            cmd_fx =  self.vx_scale * self.ctrl_dt
+            # cmd_fx =  self.vx_scale * self.ctrl_dt
+            cmd_fx =  self.vx_scale
         elif up_raw:
             cmd_fx =  self.vx_scale
         elif down_edge:
-            cmd_fx = -self.vx_scale * self.ctrl_dt
+            # cmd_fx = -self.vx_scale * self.ctrl_dt
+            cmd_fx = -self.vx_scale
         elif down_raw:
             cmd_fx = -self.vx_scale
 
@@ -76,11 +79,13 @@ class KeyboardJoystick:
         self.prev_raw[glfw.KEY_LEFT]  = left_raw
 
         if left_edge:
-            cmd_frot =  self.wz_scale * self.ctrl_dt
+            # cmd_frot =  self.wz_scale * self.ctrl_dt
+            cmd_frot =  self.wz_scale
         elif left_raw:
             cmd_frot =  self.wz_scale
         elif right_edge:
-            cmd_frot = -self.wz_scale * self.ctrl_dt
+            # cmd_frot = -self.wz_scale * self.ctrl_dt
+            cmd_frot = -self.wz_scale
         elif right_raw:
             cmd_frot = -self.wz_scale
 
@@ -94,8 +99,8 @@ class OnnxController:
         default_angles: np.ndarray,
         n_substeps: int,
         action_scale: float = 0.5,
-        vx_scale: float = 1.5,
-        wz_scale: float = 2*np.pi,
+        vx_scale: float = 1.5 * speed,
+        wz_scale: float = 2*np.pi * speed,
         ctrl_dt: float = 0.02,
     ):
         self._policy        = rt.InferenceSession(policy_path, providers=["CPUExecutionProvider"])
