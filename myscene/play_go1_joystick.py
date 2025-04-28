@@ -129,10 +129,16 @@ class OnnxController:
 
 def main():
     # 加载模型 & 数据
+    # model = mujoco.MjModel.from_xml_path(
+    #     go1_constants.FEET_ONLY_ROUGH_TERRAIN_XML.as_posix(),
+    #     assets=get_assets(),
+    # )
+    scene_path = epath.Path(__file__).parent / "room" / "room.xml"
     model = mujoco.MjModel.from_xml_path(
-        go1_constants.FEET_ONLY_ROUGH_TERRAIN_XML.as_posix(),
-        assets=get_assets(),
+        scene_path.as_posix(),
+        # assets=get_assets(),
     )
+    
     data = mujoco.MjData(model)
     mujoco.mj_resetDataKeyframe(model, data, 0)
 
