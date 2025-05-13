@@ -36,6 +36,8 @@ class KeyboardJoystick:
             glfw.KEY_DOWN:  False,
             glfw.KEY_LEFT:  False,
             glfw.KEY_RIGHT: False,
+            glfw.KEY_KP_1:     False,
+            glfw.KEY_KP_3:     False,
         }
 
     def get_command(self) -> np.ndarray:
@@ -44,50 +46,35 @@ class KeyboardJoystick:
         def raw_state(key):
             return (glfw.get_key(window, key) == glfw.PRESS) if window else False
 
-        # 边沿检测：第一次按下
         cmd_fx = 0.0
         up_raw   = raw_state(glfw.KEY_UP)
         down_raw = raw_state(glfw.KEY_DOWN)
-        # Edge detection
-        up_edge   = up_raw   and not self.prev_raw[glfw.KEY_UP]
-        down_edge = down_raw and not self.prev_raw[glfw.KEY_DOWN]
-        # 更新 prev_raw
-        self.prev_raw[glfw.KEY_UP]   = up_raw
-        self.prev_raw[glfw.KEY_DOWN] = down_raw
 
-        if up_edge:
-            # cmd_fx =  self.vx_scale * self.ctrl_dt
+        if up_raw:
             cmd_fx =  self.vx_scale
-        elif up_raw:
-            cmd_fx =  self.vx_scale
-        elif down_edge:
-            # cmd_fx = -self.vx_scale * self.ctrl_dt
-            cmd_fx = -self.vx_scale
         elif down_raw:
             cmd_fx = -self.vx_scale
 
-        # 原地转向
-        cmd_frot = 0.0
-        right_raw = raw_state(glfw.KEY_RIGHT)
-        left_raw  = raw_state(glfw.KEY_LEFT)
-        right_edge = right_raw and not self.prev_raw[glfw.KEY_RIGHT]
-        left_edge  = left_raw  and not self.prev_raw[glfw.KEY_LEFT]
-        self.prev_raw[glfw.KEY_RIGHT] = right_raw
-        self.prev_raw[glfw.KEY_LEFT]  = left_raw
 
-        if left_edge:
-            # cmd_frot =  self.wz_scale * self.ctrl_dt
+        cmd_fy = 0.0
+        key1_raw = raw_state(glfw.KEY_KP_1)
+        key3_raw = raw_state(glfw.KEY_KP_3)
+
+        if key1_raw:
+            cmd_fy =  self.vx_scale
+        elif key3_raw:
+            cmd_fy = -self.vx_scale
+
+        cmd_frot = 0.0
+        left_raw  = raw_state(glfw.KEY_LEFT)
+        right_raw = raw_state(glfw.KEY_RIGHT)
+
+        if left_raw:
             cmd_frot =  self.wz_scale
-        elif left_raw:
-            cmd_frot =  self.wz_scale
-        elif right_edge:
-            # cmd_frot = -self.wz_scale * self.ctrl_dt
-            cmd_frot = -self.wz_scale
         elif right_raw:
             cmd_frot = -self.wz_scale
 
-        # 不做侧移
-        return np.array([cmd_fx, 0.0, cmd_frot], dtype=np.float32)
+        return np.array([cmd_fx, cmd_fy, cmd_frot], dtype=np.float32)
 
 class OnnxController:
     def __init__(
