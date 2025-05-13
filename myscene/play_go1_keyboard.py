@@ -11,14 +11,12 @@ import time
 from mujoco_playground._src.locomotion.go1 import go1_constants
 from mujoco_playground._src.locomotion.go1.base import get_assets
 
-# —— 全局 GLFW 窗口指针 —— 
 _glfw_window = None
 speed = 0.4
 
 def on_key(key: int):
     """MuJoCo 被动 Viewer 回调：首次捕获 GLFW window"""
     global _glfw_window
-    # 在 UI 线程中，这将返回有效的 GLFWwindow* 
     if _glfw_window is None:
         _glfw_window = glfw.get_current_context()
 
@@ -57,7 +55,6 @@ class KeyboardJoystick:
         self.prev_raw[glfw.KEY_UP]   = up_raw
         self.prev_raw[glfw.KEY_DOWN] = down_raw
 
-        # 前后速度：短按 -> vx_scale * dt, 长按 -> vx_scale
         if up_edge:
             # cmd_fx =  self.vx_scale * self.ctrl_dt
             cmd_fx =  self.vx_scale
@@ -110,7 +107,6 @@ class OnnxController:
         self._last_action   = np.zeros_like(default_angles, dtype=np.float32)
         self._n_substeps    = n_substeps
         self._counter       = 0
-        # 直接轮询的摇杆
         self._joystick      = KeyboardJoystick(vx_scale, wz_scale, ctrl_dt)
 
     def get_obs(self, model, data) -> np.ndarray:
@@ -133,7 +129,6 @@ class OnnxController:
             data.ctrl[:] = act * self._action_scale + self._default_angles
 
 def main():
-    # 加载模型 & 数据
     # model = mujoco.MjModel.from_xml_path(
     #     go1_constants.FEET_ONLY_ROUGH_TERRAIN_XML.as_posix(),
     #     assets=get_assets(),
@@ -147,13 +142,11 @@ def main():
     data = mujoco.MjData(model)
     mujoco.mj_resetDataKeyframe(model, data, 0)
 
-    # 时步设置
     ctrl_dt    = 0.02
     sim_dt     = 0.004
     model.opt.timestep = sim_dt
     n_substeps = int(round(ctrl_dt / sim_dt))
 
-    # 启动被动 Viewer，注册 on_key 仅用来捕获 window
     handle = viewer.launch_passive(
         model, data,
         key_callback=on_key,
@@ -161,7 +154,6 @@ def main():
         show_right_ui=True,
     )
 
-    # 控制器初始化
     policy_path = epath.Path(__file__).parent / "onnx/go1_policy.onnx"
     controller = OnnxController(
         policy_path=policy_path.as_posix(),
@@ -171,7 +163,6 @@ def main():
     )
     mujoco.set_mjcb_control(controller.get_control)
 
-    # 主循环
     while handle.is_running():
         mujoco.mj_step(model, data)
         handle.sync()
