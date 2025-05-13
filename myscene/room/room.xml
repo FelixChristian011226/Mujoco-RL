@@ -1,6 +1,6 @@
 <mujoco model="go1_room_scene">
 
-  <include file="go1_mjx_feetonly.xml"/>
+  <include file="go1_mjx.xml"/>
   <option timestep="0.0004" iterations="200" />
   <option noslip_iterations="50" noslip_tolerance="1e-6" />
   <option ccd_iterations="10" />
