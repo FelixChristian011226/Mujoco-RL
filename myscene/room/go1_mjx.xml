@@ -78,6 +78,7 @@
   <worldbody>
     <light name="spotlight" mode="targetbodycom" target="trunk" pos="3 0 4"/>
     <body name="trunk" pos="0 0 0.445" childclass="go1">
+      <camera name="head_front" pos="0.3 0 0" xyaxes="0 -1 0 0 0 1"/>
       <camera name="track" pos="0.846 -1.3 0.316" xyaxes="0.866 0.500 0.000 -0.171 0.296 0.940" mode="trackcom"/>
       <camera name="top" pos="-1 0 1" xyaxes="0 -1 0 0.7 0 0.7" mode="trackcom"/>
       <camera name="side" pos="0 -1 .3" xyaxes="1 0 0 0 1 2" mode="trackcom"/>
